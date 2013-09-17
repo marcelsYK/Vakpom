@@ -13,7 +13,7 @@
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
 				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferay.version}</version>
+				<version>6.1.1</version>
 				<configuration>
 					<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
 					<appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>
@@ -105,7 +105,15 @@
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-mongodb</artifactId>
     <version>1.2.0.RELEASE</version>
+    <type>jar</type>
 </dependency>
 	</dependencies>
 	<description>Class Project</description>
+	<properties>
+        <liferay.auto.deploy.dir>${liferay.home}/deploy</liferay.auto.deploy.dir>
+   <liferay.app.server.deploy.dir>${catalina.base}/webapps</liferay.app.server.deploy.dir>
+<liferay.app.server.lib.global.dir>${catalina.base}/webapps/lib/ext</liferay.app.server.lib.global.dir> 
+<liferay.app.server.portal.dir>D:\\MySoftware\\liferay-portal-6.1.2-ce-ga3\\tomcat-7.0.40\\webapps\\ROOT</liferay.app.server.portal.dir>
+        <liferay.version>6.1.0</liferay.version>
+   </properties>
 </project>
