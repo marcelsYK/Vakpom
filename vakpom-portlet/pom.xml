@@ -113,7 +113,7 @@
         <liferay.auto.deploy.dir>${liferay.home}/deploy</liferay.auto.deploy.dir>
    <liferay.app.server.deploy.dir>${catalina.base}/webapps</liferay.app.server.deploy.dir>
 <liferay.app.server.lib.global.dir>${catalina.base}/webapps/lib/ext</liferay.app.server.lib.global.dir> 
-<liferay.app.server.portal.dir>D:\\MySoftware\\liferay-portal-6.1.2-ce-ga3\\tomcat-7.0.40\\webapps\\ROOT</liferay.app.server.portal.dir>
+<liferay.app.server.portal.dir>${catalina.base}/webapps/ROOT</liferay.app.server.portal.dir>
         <liferay.version>6.1.0</liferay.version>
    </properties>
 </project>
