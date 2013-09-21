@@ -30,12 +30,12 @@ public class PersonController {
 	        } else {
 	            personService.addPerson(person);
 	        }
-	        return new RedirectView("/HelloSpringWithMongoDB/person");  
+	        return new RedirectView("/vakpom-portlet/person");  
 	    }
 	         
 	    @RequestMapping(value = "/person/delete", method = RequestMethod.GET)  
 	    public View deletePerson(@ModelAttribute Person person, ModelMap model) {  
 	        personService.deletePerson(person);  
-	        return new RedirectView("/HelloSpringWithMongoDB/person");  
+	        return new RedirectView("/vakpom-portlet/person");  
 	    }
 }
