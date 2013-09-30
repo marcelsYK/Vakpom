@@ -1,11 +1,11 @@
-package org.krams.service;
+package org.scy.service;
 
 import java.util.List;
 import java.util.UUID;
 
-import org.krams.domain.User;
-import org.krams.repository.RoleRepository;
-import org.krams.repository.UserRepository;
+import org.scy.domain.User;
+import org.scy.repository.RoleRepository;
+import org.scy.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

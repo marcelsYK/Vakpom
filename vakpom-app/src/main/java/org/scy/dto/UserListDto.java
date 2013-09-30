@@ -1,8 +1,8 @@
-package org.krams.dto;
+package org.scy.dto;
 
 import java.util.List;
 
-import org.krams.domain.User;
+import org.scy.domain.User;
 
 public class UserListDto {
 

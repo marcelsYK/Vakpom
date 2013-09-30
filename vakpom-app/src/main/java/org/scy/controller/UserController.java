@@ -1,9 +1,9 @@
-package org.krams.controller;
+package org.scy.controller;
 
-import org.krams.domain.Role;
-import org.krams.domain.User;
-import org.krams.dto.UserListDto;
-import org.krams.service.UserService;
+import org.scy.domain.Role;
+import org.scy.domain.User;
+import org.scy.dto.UserListDto;
+import org.scy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;

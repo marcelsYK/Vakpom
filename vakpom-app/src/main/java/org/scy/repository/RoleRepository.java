@@ -1,6 +1,6 @@
-package org.krams.repository;
+package org.scy.repository;
 
-import org.krams.domain.Role;
+import org.scy.domain.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface RoleRepository extends MongoRepository<Role, String> {

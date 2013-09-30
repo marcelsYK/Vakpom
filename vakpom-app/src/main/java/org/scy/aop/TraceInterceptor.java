@@ -1,4 +1,4 @@
-package org.krams.aop;
+package org.scy.aop;
 
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;

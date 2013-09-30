@@ -1,8 +1,9 @@
-package org.krams.service;
+package org.scy.service;
 
 import java.util.UUID;
-import org.krams.domain.Role;
-import org.krams.domain.User;
+
+import org.scy.domain.Role;
+import org.scy.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 

@@ -1,4 +1,4 @@
-package org.krams.domain;
+package org.scy.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
