@@ -19,6 +19,18 @@ public class User {
 	@DBRef
 	private Role role;
 
+	
+	public User(String id, String firstName, String lastName, String username,
+			String password, Role role) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
 	public String getId() {
 		return id;
 	}
