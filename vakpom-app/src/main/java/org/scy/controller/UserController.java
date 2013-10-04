@@ -3,7 +3,7 @@ package org.scy.controller;
 import org.scy.domain.Role;
 import org.scy.domain.User;
 import org.scy.dto.UserListDto;
-import org.scy.service.UserServiceImpl;
+import org.scy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
 	@Autowired
-	private UserServiceImpl service;
+	private UserService service;
 	
 	@RequestMapping
 	public String getUsersPage() {

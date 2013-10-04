@@ -44,7 +44,9 @@ public class Business {
 	}
 
 	public long getTotalRating() {
+		System.out.println("Oa");
 		return totalRating;
+		
 	}
 
 	public void setTotalRating(long totalRating) {

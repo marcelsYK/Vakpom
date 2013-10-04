@@ -2,7 +2,7 @@ package org.scy.dto;
 
 import java.util.List;
 
-import org.scy.domain.User;
+import org.scy.domain.Business;
 
 public class BusinessListDto {
 
@@ -14,5 +14,6 @@ public class BusinessListDto {
 
 	public void setUsers(List<Business> businesses) {
 		this.businesses = businesses;
+		System.out.println("Oa");
 	}
 }
