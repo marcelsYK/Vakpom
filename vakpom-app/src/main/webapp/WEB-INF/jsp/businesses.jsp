@@ -1,15 +1,15 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/users/records" var="recordsUrl"/>
-<c:url value="/users/create" var="addUrl"/>
-<c:url value="/users/update" var="editUrl"/>
-<c:url value="/users/delete" var="deleteUrl"/>
+<c:url value="/businesses/records" var="recordsUrl"/>
+<c:url value="/businesses/create" var="addUrl"/>
+<c:url value="/businesses/update" var="editUrl"/>
+<c:url value="/businesses/delete" var="deleteUrl"/>
 
 <html>
 <head>
 	<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/style.css"/>'/>
 	<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
-	<script type='text/javascript' src='<c:url value="/resources/js/usersCustom.js"/>'></script>
+	<script type='text/javascript' src='<c:url value="/resources/js/businessesCustom.js"/>'></script>
 
 	<title>User Records</title>
 	
@@ -72,15 +72,15 @@
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
-	<table id='tableUsers'>
+	<table id='tableBusinesses'>
 		<caption></caption>
 		<thead>
 			<tr>
 				<th></th>
-				<th>Username</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Role</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>City</th>
+				<th>Phone Number</th>
 			</tr>
 		</thead>
 	</table>

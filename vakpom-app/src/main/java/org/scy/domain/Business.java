@@ -9,7 +9,7 @@ public class Business {
 	@Id
 	private String id;
 	
-	private String name;
+	private String businessName;
 	private String type;
 	private String description;
 	private String phone;
@@ -23,13 +23,13 @@ public class Business {
 	private long finalRating = totalRating/timesRated;
 	
 
-	public Business(String id, String name, String type, String description,
+	public Business(String id, String businessName, String type, String description,
 			String phone, String imageUrl, String streetAddress,
 			String zipCode, String city, String country, long totalRating,
 			long timesRated) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.businessName = businessName;
 		this.type = type;
 		this.description = description;
 		this.phone = phone;
@@ -41,6 +41,24 @@ public class Business {
 		this.totalRating = totalRating;
 		this.timesRated = timesRated;
 		this.finalRating = this.totalRating/this.timesRated;
+	}
+
+	public Business(String id, String businessName, String type, String description,
+			String phone, String imageUrl, String streetAddress,
+			String zipCode, String city, String country) {
+		super();
+		this.id = id;
+		this.businessName = businessName;
+		this.type = type;
+		this.description = description;
+		this.phone = phone;
+		this.imageUrl = imageUrl;
+		this.streetAddress = streetAddress;
+		this.zipCode = zipCode;
+		this.city = city;
+		this.country = country;
+	}
+	public Business() {
 	}
 
 	public long getTotalRating() {
@@ -110,12 +128,12 @@ public class Business {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getBusinessName() {
+		return businessName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
 	}
 
 	public String getType() {

@@ -56,9 +56,6 @@ public class InitMongoService {
 		Business uno =new Business(UUID.randomUUID().toString(), "Uno","School","blablabla","1212121","null","Pacific","68114","Omaha","USA",10,2);
 		
 		// Insert to db
-//		mongoTemplate.insert(john, "user");
-//		mongoTemplate.insert(yushu, "user");
-//		mongoTemplate.insert(san,"user");
 		mongoTemplate.insert(adminRole, "role");
 		mongoTemplate.insert(userRole, "role");
 		mongoTemplate.insert(uno,"business");

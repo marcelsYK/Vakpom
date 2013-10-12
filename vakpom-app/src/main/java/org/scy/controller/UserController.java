@@ -1,6 +1,7 @@
 package org.scy.controller;
 
 import org.scy.domain.Role;
+import org.scy.domain.Roles;
 import org.scy.domain.User;
 import org.scy.dto.UserListDto;
 import org.scy.service.UserService;
@@ -54,7 +55,8 @@ public class UserController {
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
 		newUser.setRole(newRole);
-		
+	
+		newUser.setFirstName(Roles.admin.toString());
 		return service.create(newUser);
 	}
 	

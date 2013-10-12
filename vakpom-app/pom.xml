@@ -238,7 +238,15 @@
 			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>de.flapdoodle.embedmongo</groupId>
+			<artifactId>de.flapdoodle.embedmongo</artifactId>
+			<version>1.12</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
+
 
 	<build>
 		<finalName>vakpom-app</finalName>
