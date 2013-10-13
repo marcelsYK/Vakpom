@@ -1,0 +1,10 @@
+﻿* html .u2_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Home_files/u2_normal.png");
+}
+
+* html .u6_line {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Home_files/u6_line.png");
+}
+
