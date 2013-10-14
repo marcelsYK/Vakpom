@@ -6,31 +6,31 @@ var urlHolder = new Object();
 function loadTable() {
 	$.get(urlHolder.records, function(response) {
 		
- 		$('#tableUsers').find('tbody').remove();
+ 		$('#tableBusinesses').find('tbody').remove();
  		
  		for (var i=0; i<response.users.length; i++) {
 			var row = '<tr>';
 			row += '<td><input type="radio" name="index" id="index" value="'+i+'"></td>';
-			row += '<td>' + response.users[i].username + '</td>';
-			row += '<td>' + response.users[i].firstName + '</td>';
-			row += '<td>' + response.users[i].lastName + '</td>';
-			row += '<td>' + getRole(response.users[i].role.role) + '</td>';
+			row += '<td>' + response.businesses[i].businessName + '</td>';
+			row += '<td>' + response.businesses[i].type + '</td>';
+			row += '<td>' + response.businesses[i].city + '</td>';
+			row += '<td>' + response.businesses[i].phone + '</td>';
 			row += '</tr>';
-	 		$('#tableUsers').append(row);
+	 		$('#tableBusinesses').append(row);
  		}
  		
- 		$('#tableUsers').data('model', response.users);
+ 		$('#tableBusinesses').data('model', response.businesses);
 		toggleForms('hide'); ;
  	});
 }
 
 function submitNewRecord() {
 	$.post(urlHolder.add, {
-			username: $('#newUsername').val(),
+			username: $('#newBusinessname').val(),
 			password: $('#newPassword').val(),
 			firstName: $('#newFirstName').val(),
 			lastName: $('#newLastName').val(),
-			role: $('#newRole').val()
+			
 		}, 
 		function(response) {
 			if (response != null) {
@@ -49,7 +49,7 @@ function submitDeleteRecord() {
 	var selected = $('input:radio[name=index]:checked').val();
 	
 	$.post(urlHolder.del, {
-			username: $('#tableUsers').data('model')[selected].username
+			username: $('#tableBusinesses').data('model')[selected].username
 		}, 
 		function(response) {
 			if (response == true) {
@@ -64,7 +64,7 @@ function submitDeleteRecord() {
 
 function submitUpdateRecord() {
 	$.post(urlHolder.edit, {
-			username: $('#editUsername').val(),
+			username: $('#editBusinessname').val(),
 			firstName: $('#editFirstName').val(),
 			lastName: $('#editLastName').val(),
 			role: $('#editRole').val()
@@ -82,7 +82,7 @@ function submitUpdateRecord() {
 	);
 }
 
-function getRole(role) {
+/*function getRole(role) {
 	if (role == 1) {
 		return 'Admin';
 	} else if (role == 2) {
@@ -90,7 +90,7 @@ function getRole(role) {
 	} else {
 		return 'Unknown';
 	} 
-}
+}*/
 
 function hasSelected() {
 	var selected = $('input:radio[name=index]:checked').val();
@@ -104,10 +104,10 @@ function hasSelected() {
 
 function fillEditForm() {
 	var selected = $('input:radio[name=index]:checked').val();
-	$('#editUsername').val( $('#tableUsers').data('model')[selected].username );
-	$('#editFirstName').val( $('#tableUsers').data('model')[selected].firstName );
-	$('#editLastName').val( $('#tableUsers').data('model')[selected].lastName );
-	$('#editRole').val( $('#tableUsers').data('model')[selected].role.role );
+	$('#editBusinessname').val( $('#tableBusinesses').data('model')[selected].username );
+	$('#editFirstName').val( $('#tableBusinesses').data('model')[selected].firstName );
+	$('#editLastName').val( $('#tableBusinesses').data('model')[selected].lastName );
+	/*$('#editRole').val( $('#tableBusinesses').data('model')[selected].role.role );*/
 }
 
 function resetNewForm() {

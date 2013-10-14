@@ -96,13 +96,11 @@
 		<form>
   			<fieldset>
 				<legend>Create New Record</legend>
-				<label for='newBusinessname'>Username</label><input type='text' id='newBusinessname'/><br/>
+				<label for='newBusinessname'>BusinessName</label><input type='text' id='newBusinessname'/><br/>
 				<label for='newDesc'>Description</label><input type='text' id='newDesc'/><br/>
 				<label for='newPhone'>Phone</label><input type="tel" id='newPhone'/><br/>
 				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/><br/>
-				<label for='new'>Phone</label><input type="text" id='newCity'/><br/>
-				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/><br/>
-				<label for='newPhone'>Phone</label><input type="number" id='newPhone'/><br/>
+								
 				
 				<label for='newType'>Type</label>
 					<select id='newType'>
@@ -119,13 +117,13 @@
 		<form>
   			<fieldset>
 				<legend>Edit Record</legend>
-				<input type='hidden' id='editUsername'/>
+				<input type='hidden' id='editBusinessname'/>
 				<label for='editFirstName'>First Name</label><input type='text' id='editFirstName'/><br/>
 				<label for='editLastName'>Last Name</label><input type='text' id='editLastName'/><br/>
-				<label for='editRole'>Role</label>
-					<select id='editRole'>
-						<option value='1'>Admin</option>
-						<option value='2' selected='selected'>Regular</option>
+				<label for='editType'>Type</label>
+					<select id='editType'>
+						<option value='1'>Automobile</option>
+						<option value='2' selected='selected'>Tai</option>
 					</select>
 			</fieldset>
 			<input type='button' value='Close' id='closeEditForm' />

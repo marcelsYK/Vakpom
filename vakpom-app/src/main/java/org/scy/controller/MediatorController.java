@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class MediatorController {
 
-	@RequestMapping
+	/*@RequestMapping
 	public String getHomePage() {
 		System.out.println();
 		return "redirect:/users";
-	}
+	}*/
 	
 	@RequestMapping
 	public String getBusinesses() {
