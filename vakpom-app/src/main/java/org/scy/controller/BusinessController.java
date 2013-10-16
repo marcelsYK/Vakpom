@@ -12,18 +12,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/business")
+@RequestMapping("/businesses")
 public class BusinessController {
 
 	@Autowired
 	private BusinessService businessService;
 
 	@RequestMapping
-	public String getBusinessPage() {
-		return "business";
+	public String getBusinessesPage() {
+		System.out.println("Inside Business");
+		return "businesses";
 	}
 
-	@RequestMapping(value = "/bussinessRecords")
+	@RequestMapping(value = "/records")
 	public @ResponseBody
 	BusinessListDto getBusinesses() {
 		BusinessListDto businessListDto = new BusinessListDto();
@@ -34,6 +35,7 @@ public class BusinessController {
 	@RequestMapping(value = "/get")
 	public @ResponseBody
 	Business get(@RequestBody Business business) {
+		System.out.println("Inside Business");
 		return businessService.read(business);
 	}
 

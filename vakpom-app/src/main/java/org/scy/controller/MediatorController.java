@@ -14,7 +14,8 @@ public class MediatorController {
 	}*/
 	
 	@RequestMapping
-	public String getBusinesses() {
-		return "redirect:/bussinesses";
+	public String getHomepage() {
+		System.out.println("Inside media");
+		return "redirect:/businesses";
 	}
 }
