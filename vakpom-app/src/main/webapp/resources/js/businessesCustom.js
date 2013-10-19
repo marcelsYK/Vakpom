@@ -13,29 +13,30 @@ function loadTable() {
 			row += '<td><input type="radio" name="index" id="index" value="'+i+'"></td>';
 			row += '<td>' + response.businesses[i].businessName + '</td>';
 			row += '<td>' + response.businesses[i].type + '</td>';
-			row += '<td>' + response.businesses[i].city + '</td>';
+			row += '<td>' + response.businesses[i].description + '</td>';
 			row += '<td>' + response.businesses[i].phone + '</td>';
+			row += '<td>' + response.businesses[i].streetAddress + '</td>';
 			row += '</tr>';
 	 		$('#tableBusinesses').append(row);
  		}
  		
  		$('#tableBusinesses').data('model', response.businesses);
-		toggleForms('hide'); ;
+		toggleForms('hide'); 
  	});
 }
 
 function submitNewRecord() {
 	$.post(urlHolder.add, {
-			username: $('#newBusinessname').val(),
-			password: $('#newPassword').val(),
-			firstName: $('#newFirstName').val(),
-			lastName: $('#newLastName').val(),
+		businessName: $('#newBusinessname').val(),
+		description: $('#newDesc').val(),
+		phone: $('#newPhone').val(),
+		streetAddress: $('#newStreetAddress').val(),
 			
 		}, 
 		function(response) {
 			if (response != null) {
 				loadTable();
-				toggleForms('hide'); ;
+				toggleForms('hide'); 
 				toggleCrudButtons('show');
 				alert('Success! Record has been added.');
 			} else {
@@ -72,7 +73,7 @@ function submitUpdateRecord() {
 		function(response) {
 			if (response != null) {
 				loadTable();
-				toggleForms('hide'); ;
+				toggleForms('hide'); 
 				toggleCrudButtons('show');
 				alert('Success! Record has been edited.');
 			} else {
