@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" 
-       	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       	xmlns:p="http://www.springframework.org/schema/p" 
-       	xmlns:c="http://www.springframework.org/schema/c"
-       	xmlns:tx="http://www.springframework.org/schema/tx"
-       	xmlns:context="http://www.springframework.org/schema/context"
-    	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
-       	xmlns:util="http://www.springframework.org/schema/util"
-       	xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
 			http://www.springframework.org/schema/beans 
 			http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 			http://www.springframework.org/schema/tx 
@@ -19,18 +17,36 @@
 			http://www.springframework.org/schema/util 
 			http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 
-	<context:property-placeholder properties-ref="deployProperties" />
-
+	<context:property-placeholder
+		properties-ref="deployProperties" />
+		
 	<!-- Activate Spring Data MongoDB repository support -->
-  	<mongo:repositories base-package="org.scy.repository" />
-  	
-  	<!-- MongoDB host -->
-	<mongo:mongo host="${mongo.host.name}" port="${mongo.host.port}"/>
+	<mongo:repositories base-package="org.scy.repository" />
+
+	<!-- MongoDB host -->
+	<mongo:mongo host="${mongo.host.name}" port="${mongo.host.port}" />
 
 	<!-- Template for performing MongoDB operations -->
-  	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate" 
-  			c:mongo-ref="mongo" c:databaseName="${mongo.db.name}"/>
-	
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongo" ref="mongo" />
+		<constructor-arg name="databaseName" value="${mongo.db.name}" />
+		<constructor-arg name="userCredentials" ref="mongoCredentials" />
+	</bean>
+
+	<bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
+		<constructor-arg  name="username" value="#{mongoURI.username}" />
+		<constructor-arg  name="password" value="#{new java.lang.String(mongoURI.password)}" />
+	</bean>
+
+	<bean class="com.mongodb.MongoURI" id="mongoURI">
+		<constructor-arg value="${mongo.db.url}" />
+	</bean>
+
+	<bean class="com.mongodb.Mongo" id="mongo">
+		<constructor-arg ref="mongoURI" />
+	</bean>
+
 	<!-- Service for initializing MongoDB with sample data using MongoTemplate -->
-	<bean id="initMongoService" class="org.scy.service.InitMongoService" init-method="init"/>	
+	<bean id="initMongoService" class="org.scy.service.InitMongoService"
+		init-method="init" />
 </beans>

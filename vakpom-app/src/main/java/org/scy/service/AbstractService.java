@@ -1,10 +1,6 @@
 package org.scy.service;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.UUID;
-
-import org.scy.domain.User;
 
 public abstract class AbstractService<T extends Serializable> {
 /*

@@ -20,7 +20,7 @@ function loadTable() {
  		}
  		
  		$('#tableBusinesses').data('model', response.businesses);
-		toggleForms('hide'); ;
+		toggleForms('hide'); 
  	});
 }
 
@@ -35,7 +35,7 @@ function submitNewRecord() {
 		function(response) {
 			if (response != null) {
 				loadTable();
-				toggleForms('hide'); ;
+				toggleForms('hide'); 
 				toggleCrudButtons('show');
 				alert('Success! Record has been added.');
 			} else {
@@ -72,7 +72,7 @@ function submitUpdateRecord() {
 		function(response) {
 			if (response != null) {
 				loadTable();
-				toggleForms('hide'); ;
+				toggleForms('hide'); 
 				toggleCrudButtons('show');
 				alert('Success! Record has been edited.');
 			} else {
