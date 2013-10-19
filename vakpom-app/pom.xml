@@ -244,6 +244,12 @@
 			<version>1.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!--Guava library useful for String manipulations  -->
+		<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>12.0</version>
+</dependency>
 	</dependencies>
 
 
