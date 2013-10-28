@@ -6,20 +6,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class User {
-	
+
 	@Id
 	private String id;
-	
+
 	private String firstName;
 	private String lastName;
-	
+
 	private String username;
 	private String password;
-	
+
 	@DBRef
 	private Role role;
 
-	
 	public User(String id, String firstName, String lastName, String username,
 			String password, Role role) {
 		super();
@@ -33,6 +32,47 @@ public class User {
 
 	public User() {
 		// TODO Auto-generated constructor stub
+	}
+
+	private User(Builder builder) {
+		this.id = builder.id;
+		this.firstName = builder.firstName;
+		this.lastName = builder.lastName;
+		this.username = builder.username;
+		this.password = builder.password;
+		this.role = builder.role;
+	}
+
+	public static class Builder {
+
+		private String id;
+
+		private String firstName;
+		private String lastName;
+
+		private String username;
+		private String password;
+
+		private Role role;
+
+		public Builder() {
+
+		}
+
+		public Builder withFirstName(String firstName) {
+			this.firstName = firstName;
+			return this;
+		}
+
+		public Builder withLastName(String lastName) {
+			this.lastName = lastName;
+			return this;
+		}
+
+		public User build() {
+			return new User(this);
+		}
+
 	}
 
 	public String getId() {
@@ -82,4 +122,25 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
+
+	/**
+	 * toString method for User
+	 *
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+	    final StringBuilder sb = new StringBuilder();
+	
+	 sb.append("Id :  " + this.id == null ? "" :  this.id  + ",");
+	 sb.append("First Name :  " + this.firstName == null ? "" :  this.firstName  + ",");
+	 sb.append("Last Name :  " + this.lastName == null ? "" :  this.lastName  + ",");
+	 sb.append("Username :  " + this.username == null ? "" :  this.username  + ",");
+	 sb.append("Password :  " + this.password == null ? "" :  this.password  + ",");
+	 sb.append("Role :  " + this.role == null ? "" :  this.role  + ","); 
+	 return "User [" + sb.toString() + "]";
+	}
+	
+	
+	
 }

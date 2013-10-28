@@ -1,15 +1,15 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/businesses/records" var="recordsUrl"/>
-<c:url value="/businesses/create" var="addUrl"/>
-<c:url value="/businesses/update" var="editUrl"/>
-<c:url value="/businesses/delete" var="deleteUrl"/>
+<c:url value="/users/records" var="recordsUrl"/>
+<c:url value="/users/create" var="addUrl"/>
+<c:url value="/users/update" var="editUrl"/>
+<c:url value="/users/delete" var="deleteUrl"/>
 
 <html>
 <head>
 	<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/style.css"/>'/>
 	<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
-	<script type='text/javascript' src='<c:url value="/resources/js/businessesCustom.js"/>'></script>
+	<script type='text/javascript' src='<c:url value="/resources/js/custom.js"/>'></script>
 
 	<title>User Records</title>
 	
@@ -72,15 +72,15 @@
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
-	<table id='tableBusinesses'>
+	<table id='tableUsers'>
 		<caption></caption>
 		<thead>
 			<tr>
 				<th></th>
-				<th>Name</th>
-				<th>Type</th>
-				<th>City</th>
-				<th>Phone Number</th>
+				<th>Business Name</th>
+				<th>Description</th>
+				<th>Phone</th>
+				<th>Address</th>
 			</tr>
 		</thead>
 	</table>
@@ -96,15 +96,13 @@
 		<form>
   			<fieldset>
 				<legend>Create New Record</legend>
-				<label for='newBusinessName'>Business Name</label><input type='text' id='newBusinessName'/><br/>
-				<label for='newDesc'>Description</label><input type='text' id='newDesc'/><br/>
-				<label for='newPhone'>Phone</label><input type="tel" id='newPhone'/><br/>
+				<label for='newBusinessName'>Username</label><input type='text' id='newBusinessName'/><br/>
+				<label for='newDesc'>Description</label><input type='password' id='newDesc'/><br/>
+				<label for='newPhone'>Phone</label><input type='tel' id='newPhone'/><br/>
 				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/><br/>
-								
-				
-				<label for='newType'>Type</label>
+				<label for='newType'>Role</label>
 					<select id='newType'>
-						<option value='1'>Automobile</option>
+						<option value='1'>Tailor</option>
 						<option value='2' selected='selected'>Hair Dresser</option>
 					</select>
   			</fieldset>
