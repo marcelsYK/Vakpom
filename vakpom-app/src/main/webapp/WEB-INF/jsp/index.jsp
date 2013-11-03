@@ -26,8 +26,8 @@
   
   function submitForm(elementId)
   {
-	  alert("You HERE me!");
-	  alert("You elementId me!" + elementId);
+	  alert("You are here!");
+	  alert("You elementId me:" + elementId);
 	  actionForm = '/' + elementId;
 	  document.indexForm.action="/businesses";
      $("#indexForm").submit();
