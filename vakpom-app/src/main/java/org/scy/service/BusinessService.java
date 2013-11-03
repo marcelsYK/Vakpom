@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.scy.domain.Business;
 import org.scy.repository.BusinessRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,7 +14,7 @@ public class BusinessService {
 
 	// TODO Think of using an abstractFactory
 	@Autowired
-	private BusinessRepository businessRepository;
+	BusinessRepository businessRepository;
 	
 
 	public Business create(Business business) {

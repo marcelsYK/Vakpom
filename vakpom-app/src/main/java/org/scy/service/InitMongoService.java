@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class InitMongoService {
 
 	@Autowired
-	private MongoTemplate mongoTemplate;
+	MongoTemplate mongoTemplate;
 
 	public void init() {
 		// Drop existing collections

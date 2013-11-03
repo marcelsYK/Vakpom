@@ -7,6 +7,7 @@ import org.scy.domain.User;
 import org.scy.repository.RoleRepository;
 import org.scy.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,10 +18,10 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 	@Autowired
-	private UserRepository userRepository;
+	UserRepository userRepository;
 	
 	@Autowired
-	private RoleRepository roleRepository;
+	RoleRepository roleRepository;
 	
 	public User create(User user) {
 		user.setId(UUID.randomUUID().toString());
