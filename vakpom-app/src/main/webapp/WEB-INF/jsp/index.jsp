@@ -5,9 +5,9 @@
 <title>Vakpom</title>
  
 <link href="resources/css/sunny/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-	<script src="resources/js/jquery-1.9.1.js"></script>
+	
 	<script src="resources/js/jquery-ui-1.10.3.custom.js"></script>
-
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 <style>
   #feedback { font-size: 1.4em; }
@@ -24,15 +24,19 @@
     alert("You click me!");
   });
   
-  function submitForm(elementId)
+  //Will work on this part
+  
+ /* $("#businesses").click(function submitForm(elementId)
   {
-	  alert("You are here!");
+	 
 	  alert("You elementId me:" + elementId);
 	  actionForm = '/' + elementId;
 	  document.indexForm.action="/businesses";
      $("#indexForm").submit();
      return true;
-  }
+  });*/
+  
+   
   </script>
 </head>
 
@@ -44,14 +48,14 @@
 	<p>This site is under construction but follow the links below for a
 		preview
 	<p>
-	<ol id="selectable">
-		<li class="ui-widget-content" id="businesses" value="businesses" onClick='submitForm(this.value)'><a  href="<c:url value="/businesses"/>"></a>Create a
-			Business</li>
-		<li class="ui-widget-content" id="businesses"><a href="<c:url value="/businesses"/>"></a>Search
-			for Businesses</li>
-		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>"> </a>Create an User</li>
-		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>"> </a>View Users</li>
-	</ol>
+	<ul id="selectable">
+		<li  class="ui-widget-content" id="businesses" value="businesses"><a  href="<c:url value="/businesses"/>" >Create a
+			Business</a></li>
+		<li class="ui-widget-content" id="businesses"><a href="<c:url value="/businesses"/>">Search
+			for Businesses</a></li>
+		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>">Create an User </a></li>
+		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>">View Users </a></li>
+	</ul>
 	</form>
 </body>
 </html>
