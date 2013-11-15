@@ -11,7 +11,7 @@
 	<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
 	<script type='text/javascript' src='<c:url value="/resources/js/businessesCustom.js"/>'></script>
 
-	<title>User Records</title>
+	<title>Business Records</title> 
 	
 	<script type='text/javascript'>
 	$(function() {

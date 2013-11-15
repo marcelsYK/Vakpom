@@ -26,10 +26,10 @@ function loadTable() {
 
 function submitNewRecord() {
 	$.post(urlHolder.add, {
-			username: $('#newBusinessname').val(),
-			password: $('#newPassword').val(),
-			firstName: $('#newFirstName').val(),
-			lastName: $('#newLastName').val(),
+		businessName: $('#newBusinessname').val(),
+		type: $('#newType').val(),
+		city: $('#newCity').val(),
+		phone: $('#newPhone').val(),
 			
 		}, 
 		function(response) {
@@ -49,7 +49,7 @@ function submitDeleteRecord() {
 	var selected = $('input:radio[name=index]:checked').val();
 	
 	$.post(urlHolder.del, {
-			username: $('#tableBusinesses').data('model')[selected].username
+			businessName: $('#tableBusinesses').data('model')[selected].businessName
 		}, 
 		function(response) {
 			if (response == true) {
@@ -64,10 +64,10 @@ function submitDeleteRecord() {
 
 function submitUpdateRecord() {
 	$.post(urlHolder.edit, {
-			username: $('#editBusinessname').val(),
-			firstName: $('#editFirstName').val(),
-			lastName: $('#editLastName').val(),
-			role: $('#editRole').val()
+			businessName: $('#editBusinessname').val(),
+			type: $('#editType').val(),
+			city: $('#editCity').val(),
+			phone: $('#editPhone').val()
 		}, 
 		function(response) {
 			if (response != null) {
@@ -104,24 +104,24 @@ function hasSelected() {
 
 function fillEditForm() {
 	var selected = $('input:radio[name=index]:checked').val();
-	$('#editBusinessname').val( $('#tableBusinesses').data('model')[selected].username );
-	$('#editFirstName').val( $('#tableBusinesses').data('model')[selected].firstName );
-	$('#editLastName').val( $('#tableBusinesses').data('model')[selected].lastName );
+	$('#editBusinessname').val( $('#tableBusinesses').data('model')[selected].businessName );
+	$('#editType').val( $('#tableBusinesses').data('model')[selected].type );
+	$('#editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
 	/*$('#editRole').val( $('#tableBusinesses').data('model')[selected].role.role );*/
 }
 
 function resetNewForm() {
-	$('#newUsername').val('');
-	$('#newPassword').val('');
-	$('#newFirstName').val('');
-	$('#newLastName').val('');
-	$('#newRole').val('2');
+	$('#newBusinessname').val('');
+	$('#newType').val('');
+	$('#newCity').val('');
+	$('#newPhone').val('');
+	//$('#newRole').val('2');
 }
 
 function resetEditForm() {
-	$('#editFirstName').val('');
-	$('#editLastName').val('');
-	$('#editRole').val('2');
+	$('#editBusinessname').val('');
+	$('#editType').val('');
+	$('#editCity').val('2');
 }
 
 function toggleForms(id) {
