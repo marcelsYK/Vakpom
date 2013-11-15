@@ -1,61 +1,63 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html lang="us">
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 <title>Vakpom</title>
- 
-<link href="resources/css/sunny/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-	
-	<script src="resources/js/jquery-ui-1.10.3.custom.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ourstyle.css" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="application/javascript">
 
-<style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #FECA40; }
-  #selectable .ui-selected { background: #F39814; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
-  </style>
-  <script>
-  
-  var actionForm;
-  $(function() {
-    $( "#selectable" ).selectable();
-    alert("You click me!");
-  });
-  
-  //Will work on this part
-  
- /* $("#businesses").click(function submitForm(elementId)
-  {
-	 
-	  alert("You elementId me:" + elementId);
-	  actionForm = '/' + elementId;
-	  document.indexForm.action="/businesses";
-     $("#indexForm").submit();
-     return true;
-  });*/
-  
-   
-  </script>
+$(document).ready(function() {
+	$('#searchField').click(function(){
+	$(this).val('');
+})
+	
+	
+    
+});
+</script>
+
 </head>
 
 
 <body>
-	<h2>Vakpom, Businesses that matters!</h2>
-	<form name="indexForm" method="POST"  id="indexForm">
+<div id="wrapper">
+<div id="header">
+<div id="title">
+<h2>Vakpom, Businesses that matters!</h2>
+</div>
+<div id="loginAndSearch">
+<ul id="login">
+<li><a href="#">Login</a></li>
+<li><a href="#">Sign-Up</a></li>
+</ul>
+<form name="searchtab" action="#" method="post">
+    <input type="text" value="Business search" id="searchField" />
+    <input type="button" id="search" value="Go" />
+</form>
+</div>
 	
+    
+</div> 
+<div id="content"> 	
 	<p>This site is under construction but follow the links below for a
-		preview
-	<p>
+		preview</p>
+	
 	<ul id="selectable">
-		<li  class="ui-widget-content" id="businesses" value="businesses"><a  href="<c:url value="/businesses"/>" >Create a
+		<li id="businesses" value="businesses"><a  href="<c:url value="/businesses"/>" >Create a
 			Business</a></li>
-		<li class="ui-widget-content" id="businesses"><a href="<c:url value="/businesses"/>">Search
+		<li id="businesses"><a href="<c:url value="/businesses"/>">Search
 			for Businesses</a></li>
-		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>">Create an User </a></li>
-		<li class="ui-widget-content" id="users"><a href="<c:url value="/users"/>">View Users </a></li>
+		<li id="users"><a href="<c:url value="/users"/>">Create an User </a></li>
+		<li id="users"><a href="<c:url value="/users"/>">View Users </a></li>
 	</ul>
-	</form>
+    </div>
+	
+  </div>
+  
 </body>
 </html>
