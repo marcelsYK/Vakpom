@@ -3,6 +3,8 @@ package org.scy.controller;
 import org.scy.domain.Business;
 import org.scy.dto.BusinessListDto;
 import org.scy.service.BusinessService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/businesses")
 public class BusinessController {
 
+	Logger logger = LoggerFactory.getLogger(BusinessController.class);
+	
 	@Autowired
 	private BusinessService businessService;
 
@@ -42,14 +46,14 @@ public class BusinessController {
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public @ResponseBody
 	Business create(@RequestParam String id, @RequestParam String businessName,
-			@RequestParam String type, @RequestParam String description,
-			@RequestParam String phone, @RequestParam String imageUrl,
-			@RequestParam String streetAddress, @RequestParam String zipCode,
-			@RequestParam String city, @RequestParam String country) {
+			@RequestParam String type,
+			@RequestParam String phone,
+			@RequestParam String city) {
 
+		logger.debug("Parameters sent from jsp:" + businessName +", "+ city );
 		Business existingBusiness = new Business(id, businessName, type,
-				description, phone, imageUrl, streetAddress, zipCode, city,
-				country);
+				null, phone, null, null, null, city,
+				null);
 
 		return businessService.create(existingBusiness);
 	}

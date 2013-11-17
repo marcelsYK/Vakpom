@@ -8,7 +8,7 @@ function loadTable() {
 		
  		$('#tableBusinesses').find('tbody').remove();
  		
- 		for (var i=0; i<response.users.length; i++) {
+ 		for (var i=0; i<response.businesses.length; i++) {
 			var row = '<tr>';
 			row += '<td><input type="radio" name="index" id="index" value="'+i+'"></td>';
 			row += '<td>' + response.businesses[i].businessName + '</td>';
@@ -25,19 +25,22 @@ function loadTable() {
 }
 
 function submitNewRecord() {
+	alert("BusinessCustom: " + $('#newBusinessName').val()),
 	$.post(urlHolder.add, {
-		businessName: $('#newBusinessname').val(),
+		businessName: $('#newBusinessName').val(),
 		type: $('#newType').val(),
-		city: $('#newCity').val(),
 		phone: $('#newPhone').val(),
+		city: $('#newCity').val()
+	
 			
 		}, 
 		function(response) {
+			alert('response');
 			if (response != null) {
 				loadTable();
 				toggleForms('hide'); 
 				toggleCrudButtons('show');
-				alert('Success! Record has been added.');
+				alert('Success! A new Business has been added.');
 			} else {
 				alert('Failure! An error has occurred!');
 			}

@@ -51,4 +51,14 @@ public class BusinessService {
 		return true;
 	}
 	
+	
+	public List<Business> findAllByBusinessName(String businessName)
+	{
+		if (businessName==null || businessName.trim()=="")
+		
+			return businessRepository.findAll();
+		
+		
+		return businessRepository.findAllByBusinessName(businessName);
+	}
 }

@@ -47,6 +47,7 @@
 		
 		$('#newForm').submit(function() {
 			event.preventDefault();
+			alert("INSIDE business jsp submit");
 			submitNewRecord();
 		});
 		
@@ -96,11 +97,10 @@
 		<form>
   			<fieldset>
 				<legend>Create New Record</legend>
-				<label for='newBusinessName'>Business Name</label><input type='text' id='newBusinessName'/><br/>
-				<label for='newDesc'>Description</label><input type='text' id='newDesc'/><br/>
+				<label for='newBusinessName'>Name</label><input type='text' id='newBusinessName'/><br/>
+				<label for='newCity'>City</label><input type='text' id='newCity'/><br/>
 				<label for='newPhone'>Phone</label><input type="tel" id='newPhone'/><br/>
-				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/><br/>
-								
+							
 				
 				<label for='newType'>Type</label>
 					<select id='newType'>

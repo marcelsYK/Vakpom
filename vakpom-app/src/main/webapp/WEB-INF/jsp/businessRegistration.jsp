@@ -1,6 +1,5 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/users/records" var="recordsUrl"/>
 <c:url value="/users/create" var="addUrl"/>
 <c:url value="/users/update" var="editUrl"/>
 <c:url value="/users/delete" var="deleteUrl"/>
@@ -95,12 +94,11 @@
 	<div id='newForm'>
 		<form>
   			<fieldset>
-				<legend>Create New Record</legend>
-				<label for='newBusinessName'>Username</label><input type='text' id='newBusinessName'/><br/>
-				<label for='newDesc'>Description</label><input type='password' id='newDesc'/><br/>
+				<legend>Create New Business</legend>
+				<label for='newBusinessName'>Name</label><input type='text' id='newBusinessName'/><br/>
+				<label for='newCity'>City</label><input type='text' id='newCity'/><br/>
 				<label for='newPhone'>Phone</label><input type='tel' id='newPhone'/><br/>
-				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/><br/>
-				<label for='newType'>Role</label>
+				<label for='newType'>Type</label>
 					<select id='newType'>
 						<option value='1'>Tailor</option>
 						<option value='2' selected='selected'>Hair Dresser</option>
@@ -117,7 +115,7 @@
 				<legend>Edit Record</legend>
 				<input type='hidden' id='editBusinessname'/>
 				<label for='editBusinessName'>Business Name</label><input type='text' id='editBusinessName'/><br/>
-				<label for='editDesc'>Description</label><input type='text' id='editDesc'/><br/>
+				<label for='editDesc'>TEST</label><input type='text' id='editDesc'/><br/>
 				<label for='editType'>Type</label>
 					<select id='editType'>
 						<option value='1'>Tailor</option>

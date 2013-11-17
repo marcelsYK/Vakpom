@@ -9,7 +9,7 @@
 <head>
 	<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/style.css"/>'/>
 	<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
-	<script type='text/javascript' src='<c:url value="/resources/js/custom.js"/>'></script>
+	<script type='text/javascript' src='<c:url value="/resources/js/usersCustom.js"/>'></script>
 
 	<title>User Records</title>
 	

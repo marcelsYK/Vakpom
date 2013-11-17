@@ -33,7 +33,7 @@
 				toggleCrudButtons('hide');
 				fillEditForm();
 			}
-		});
+			});
 		
 		$('#reloadBtn').click(function() { 
 			loadTable();
