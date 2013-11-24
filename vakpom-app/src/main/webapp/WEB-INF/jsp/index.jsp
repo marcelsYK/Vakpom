@@ -32,7 +32,7 @@ $(document).ready(function() {
 </div>
 <div id="loginAndSearch">
 <ul id="login">
-<li><a href="#">Login</a></li>
+<li><a href="<c:url value="/login"/>">Login</a></li>
 <li><a href="#">Sign-Up</a></li>
 </ul>
 <form name="searchtab" action="#" method="post">

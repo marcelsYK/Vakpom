@@ -6,6 +6,9 @@ body{
 	background-attachment:fixed;
 	
 }
+#white{
+	background:#FFF;
+}
 
 #wrapper {
 	margin:0px auto;
@@ -48,6 +51,34 @@ body{
 	
 	
 }
+
+#loginpage{
+	position:absolute;
+	left:454px;
+	top:130px;
+	width:435px;
+	height:266px;
+	background:#CCCCFF;
+	border-radius:10px;
+	border: 1px solid #999 ;
+	padding-left:50px;
+	color:#666;
+	
+	
+		
+}
+
+#loginpage h3{
+	font-family:Century Gothic;
+	font-size:19px;
+	font-weight:normal;
+}
+
+#loginButton{
+	width:110px;
+	height:40px;
+}
+
 #feedback { font-size: 1.4em; }
 #selectable .ui-selecting { background: #FECA40; }
 #selectable .ui-selected { background: #F39814; color: white; }
