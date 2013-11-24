@@ -45,17 +45,20 @@ public class BusinessController {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public @ResponseBody
-	Business create(@RequestParam String id, @RequestParam String businessName,
+	Business create(@RequestParam String businessName,
 			@RequestParam String type,
 			@RequestParam String phone,
 			@RequestParam String city) {
 
 		logger.debug("Parameters sent from jsp:" + businessName +", "+ city );
-		Business existingBusiness = new Business(id, businessName, type,
-				null, phone, null, null, null, city,
-				null);
+		System.out.println("Parameters sent from jsp:" + businessName +", "+ city );
+		Business newBusiness = new Business();
+		newBusiness.setBusinessName(businessName);
+		newBusiness.setType(type);
+		newBusiness.setPhone(phone);
+		newBusiness.setCity(city);
 
-		return businessService.create(existingBusiness);
+		return businessService.create(newBusiness);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
