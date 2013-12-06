@@ -15,19 +15,39 @@ public class User {
 
 	private String username;
 	private String password;
-
+	private int zipcode;
+	private String country;
+	
 	@DBRef
 	private Role role;
 
 	public User(String id, String firstName, String lastName, String username,
-			String password, Role role) {
+			String password, int zipcode, String country, Role role) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
+		this.zipcode = zipcode;
+		this.country = country;
 		this.role = role;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public User() {
