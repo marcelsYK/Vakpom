@@ -33,8 +33,9 @@ $(document).ready(function() {
 <div id="loginAndSearch">
 <ul id="login">
 <li><a href="<c:url value="/login"/>">Login</a></li>
-<li><a href="#">Sign-Up</a></li>
+<li><a href="<c:url value="/create_account"/>">Sign-Up</a></li>
 </ul>
+
 <form name="searchtab" action="#" method="post">
     <input type="text" value="Business search" id="searchField" />
     <input type="button" id="search" value="Go" />

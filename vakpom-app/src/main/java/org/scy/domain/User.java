@@ -15,7 +15,9 @@ public class User {
 
 	private String username;
 	private String password;
-
+	private int zipcode;
+	private String country;
+	
 	@DBRef
 	private Role role;
 
