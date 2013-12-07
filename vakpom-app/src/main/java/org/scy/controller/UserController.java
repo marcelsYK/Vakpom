@@ -1,7 +1,6 @@
 package org.scy.controller;
 
 import org.scy.domain.Role;
-import org.scy.domain.Roles;
 import org.scy.domain.User;
 import org.scy.dto.UserListDto;
 import org.scy.service.UserService;
@@ -41,23 +40,24 @@ public class UserController {
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public @ResponseBody User create(
 			@RequestParam String username,
-			@RequestParam String password,
-			@RequestParam String firstName,
-			@RequestParam String lastName,
-			@RequestParam String email,
-			@RequestParam int zipcode,
-			@RequestParam String city,
-			@RequestParam String country) {
+			@RequestParam String firstName
+//			@RequestParam String lastName,
+//			@RequestParam String password,
+//			@RequestParam String email,
+//			@RequestParam int zipcode,
+//			@RequestParam String city,
+//			@RequestParam String country
+			) {
 System.out.println("INSIDE ******UserController");
 		User newUser = new User();
 		newUser.setUsername(username);
-		newUser.setPassword(password);
+//		newUser.setPassword(password);
 		newUser.setFirstName(firstName);
-		newUser.setLastName(lastName);
-		newUser.setZipcode(zipcode);
-		newUser.setCity(city);
-		newUser.setCountry(country);
-		newUser.setEmail(email);
+//		newUser.setLastName(lastName);
+//		newUser.setZipcode(zipcode);
+//		newUser.setCity(city);
+//		newUser.setCountry(country);
+//		newUser.setEmail(email);
 		
 		/*	Role newRole = new Role();
 		newRole.setRole(role);

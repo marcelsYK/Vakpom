@@ -17,15 +17,11 @@
 		urlHolder.add = '${addUrl}';
 
 		$('#newUser').submit(function() {
-			alert("Found you");
 			event.preventDefault();
 			submitNewRecord();
 		});
 
-		$('#closeNewForm').click(function() {
-			toggleForms('hide');
-			toggleCrudButtons('show');
-		});
+		
 	});
 </script>
 </head>

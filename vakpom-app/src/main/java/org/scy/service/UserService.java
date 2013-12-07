@@ -25,11 +25,11 @@ public class UserService {
 	
 	public User create(User user) {
 		user.setId(UUID.randomUUID().toString());
-		user.getRole().setId(UUID.randomUUID().toString());
+//		user.getRole().setId(UUID.randomUUID().toString());
 		
 		// We must save both separately since there is no cascading feature
 		// in Spring Data MongoDB (for now)
-		roleRepository.save(user.getRole());
+//		roleRepository.save(user.getRole());
 		return userRepository.save(user);
 	}
 	
