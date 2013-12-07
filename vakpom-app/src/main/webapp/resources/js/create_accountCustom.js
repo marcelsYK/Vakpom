@@ -22,7 +22,7 @@ function submitNewRecord() {
 			email: $('#newEmail').val(),
 			zipcode: $('#zip').val(),
 			city: $('#city').val(),
-			country: $('#country')
+			country: $('#country').val()
 		}, 
 		function(response) {
 			if (response != null) {
@@ -35,6 +35,8 @@ function submitNewRecord() {
 			}
 		}
 	);	
+	
+	alert("AFTER Thank y*&**********8d.");
 }
 
 

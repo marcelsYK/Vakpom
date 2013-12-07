@@ -14,7 +14,6 @@ function loadTable() {
 			row += '<td>' + response.users[i].username + '</td>';
 			row += '<td>' + response.users[i].firstName + '</td>';
 			row += '<td>' + response.users[i].lastName + '</td>';
-			row += '<td>' + getRole(response.users[i].role.role) + '</td>';
 			row += '</tr>';
 	 		$('#tableUsers').append(row);
  		}

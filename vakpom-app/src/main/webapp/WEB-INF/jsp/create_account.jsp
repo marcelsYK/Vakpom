@@ -3,7 +3,6 @@
 
 <c:url value="/users/create" var="addUrl"/>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,7 +39,7 @@
 				<table>
 					<tr>
 						<td><label for='username'>User Name</label><input type='text'
-							id='username' /><br /></td>
+							id='newUsername' /><br /></td>
 					</tr>
 					<tr>
 						<td><label for='newFirstName'>First Name</label><input
@@ -72,7 +71,7 @@
 
 					<tr>
 						<td><label for="password">Password</label> <input
-							id="password" type="password" size="40" /></td>
+							id="newPassword" type="password" size="40" /></td>
 					</tr>
 
 					<tr>
