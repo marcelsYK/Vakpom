@@ -28,9 +28,9 @@
 </script>
 </head>
 
-<body id="white">
+<body>
 	<div id="wrapper">
-		<div id="loginpage">
+		<div>
 			<form>
 				<br />
 				<h3>Create your Vakpom profile</h3>

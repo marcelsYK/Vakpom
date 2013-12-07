@@ -23,9 +23,9 @@ public class InitMongoService {
 		mongoTemplate.dropCollection("role");
 		mongoTemplate.dropCollection("user");
 		mongoTemplate.dropCollection("business");
-		
+
 		// Create new role records
-		
+
 		Role adminRole = new Role();
 		adminRole.setId(UUID.randomUUID().toString());
 		adminRole.setRole(1);
@@ -33,33 +33,44 @@ public class InitMongoService {
 		Role userRole = new Role();
 		userRole.setId(UUID.randomUUID().toString());
 		userRole.setRole(2);
-		
+
 		// Create new user records
-		
+
 		List<User> batchUsersToSave = new ArrayList<User>();
-		User john = new User(UUID.randomUUID().toString(), "John", "Smith",
-				"john", "21232f297a57a5a743894a0e4a801fc3", adminRole);
+		User john = new User.Builder().withFirstName("John")
+				.withLastName("Smith").withUsername("john@test.com")
+				.withPassword("test").withZipcode(1536).withCountry("India")
+				.build();
+
 		batchUsersToSave.add(john);
-		
-		User yushu = new User(UUID.randomUUID().toString(), "Yushu", "Test",
-				"yushu", "21232f297a57a5a743894a0e4a801fc3", userRole);
+
+		User yushu = new User.Builder().withFirstName("Yushu")
+				.withLastName("Song").withUsername("yushu@vakpom.com")
+				.withPassword("test").withZipcode(68151).withCountry("China").withRole(adminRole)
+				.build();
+
 		batchUsersToSave.add(yushu);
-		
-		User san = new User(UUID.randomUUID().toString(), "San", "Kponton",
-				"san", "21232f297a57a5a743894a0e4a801fc8", adminRole);
+
+		User san = new User.Builder().withFirstName("San")
+				.withLastName("Kponton").withUsername("san@vakpom.com")
+				.withPassword("test").withZipcode(68114).withCountry("Togo")
+				.build();
+
 		batchUsersToSave.add(san);
-		
-		
-		
-		
+
+		System.out.println("test8888888888888888888888888888"
+				+ san.getFirstName());
+
 		// Create new business records
-		Business uno =new Business(UUID.randomUUID().toString(), "Uno","School","blablabla","1212121","null","Pacific","68114","Omaha","USA",10,2);
-		
+		Business uno = new Business(UUID.randomUUID().toString(), "Uno",
+				"School", "blablabla", "1212121", "null", "Pacific", "68114",
+				"Omaha", "USA", 10, 2);
+
 		// Insert to db
 		mongoTemplate.insert(adminRole, "role");
 		mongoTemplate.insert(userRole, "role");
-		mongoTemplate.insert(uno,"business");
-		
-		mongoTemplate.insert(batchUsersToSave , "user");
+		mongoTemplate.insert(uno, "business");
+
+		mongoTemplate.insert(batchUsersToSave, "user");
 	}
 }

@@ -10,6 +10,10 @@ body{
 	background:#FFF;
 }
 
+#notsdi{
+	background:#CCCCFF;
+}
+
 #wrapper {
 	margin:0px auto;
 	width:900px;

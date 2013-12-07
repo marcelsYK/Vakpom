@@ -16,21 +16,13 @@ public class User {
 	private String username;
 	private String password;
 	private int zipcode;
+	
+
 	private String country;
 	
 	@DBRef
 	private Role role;
 
-	public User(String id, String firstName, String lastName, String username,
-			String password, Role role) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
-		this.password = password;
-		this.role = role;
-	}
 
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -43,9 +35,15 @@ public class User {
 		this.username = builder.username;
 		this.password = builder.password;
 		this.role = builder.role;
+		this.zipcode= builder.zipcode;
+		this.country= builder.country;
 	}
 
 	public static class Builder {
+
+		public String country;
+
+		public int zipcode;
 
 		private String id;
 
@@ -63,6 +61,31 @@ public class User {
 
 		public Builder withFirstName(String firstName) {
 			this.firstName = firstName;
+			return this;
+		}
+		
+		public Builder withRole(Role role) {
+			this.role = role;
+			return this;
+		}
+		
+		public Builder withUsername(String username) {
+			this.username = username;
+			return this;
+		}
+		
+		public Builder withPassword(String password) {
+			this.password = password;
+			return this;
+		}
+		
+		public Builder withZipcode(int zipcode) {
+			this.zipcode = zipcode;
+			return this;
+		}
+		
+		public Builder withCountry(String country) {
+			this.country = country;
 			return this;
 		}
 
@@ -123,6 +146,23 @@ public class User {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	/**
