@@ -44,19 +44,25 @@ public class UserController {
 			@RequestParam String password,
 			@RequestParam String firstName,
 			@RequestParam String lastName,
-			@RequestParam Integer role) {
+			@RequestParam String email,
+			@RequestParam int zipcode,
+			@RequestParam String city,
+			@RequestParam String country) {
 
-		Role newRole = new Role();
-		newRole.setRole(role);
-		
 		User newUser = new User();
 		newUser.setUsername(username);
 		newUser.setPassword(password);
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);
-		newUser.setRole(newRole);
-	
-		newUser.setFirstName(Roles.admin.toString());
+		newUser.setZipcode(zipcode);
+		newUser.setCity(city);
+		newUser.setCountry(country);
+		newUser.setEmail(email);
+		
+		/*	Role newRole = new Role();
+		newRole.setRole(role);
+		newUser.setRole(newRole);*/
+
 		return service.create(newUser);
 	}
 	

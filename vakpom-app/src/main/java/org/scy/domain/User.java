@@ -15,9 +15,9 @@ public class User {
 
 	private String username;
 	private String password;
+	private String email;
+	private String city;
 	private int zipcode;
-	
-
 	private String country;
 	
 	@DBRef
@@ -25,7 +25,6 @@ public class User {
 
 
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 
 	private User(Builder builder) {
@@ -35,7 +34,7 @@ public class User {
 		this.username = builder.username;
 		this.password = builder.password;
 		this.role = builder.role;
-		this.zipcode= builder.zipcode;
+		this.zipcode = builder.zipcode;
 		this.country= builder.country;
 	}
 
@@ -165,6 +164,22 @@ public class User {
 		this.country = country;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	/**
 	 * toString method for User
 	 *
@@ -179,10 +194,14 @@ public class User {
 	 sb.append("Last Name :  " + this.lastName == null ? "" :  this.lastName  + ",");
 	 sb.append("Username :  " + this.username == null ? "" :  this.username  + ",");
 	 sb.append("Password :  " + this.password == null ? "" :  this.password  + ",");
+	 sb.append("Email :  " + this.email == null ? "" :  this.email  + ",");
+	 sb.append("City :  " + this.city == null ? "" :  this.city  + ",");
+	 sb.append("Zipcode :  " + this.zipcode + ",");
+	 sb.append("Country :  " + this.country == null ? "" :  this.country  + ",");
 	 sb.append("Role :  " + this.role == null ? "" :  this.role  + ","); 
 	 return "User [" + sb.toString() + "]";
-	}
+	}	
 	
 	
-	
+
 }

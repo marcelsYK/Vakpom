@@ -1,21 +1,24 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+<c:url value="/users/create" var="addUrl"/>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/ourstyle.css" />
-<title>Untitled Document</title>
+<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
+<script type='text/javascript' src='<c:url value="/resources/js/create_accountCustom.js"/>'></script>
+<link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
+	
+<title>Create User Account</title>
 
 <script type='text/javascript'>
 	$(function() {
-
 		urlHolder.add = '${addUrl}';
-		loadTable();
 
-		$('#newForm').submit(function() {
+		$('#newUser').submit(function() {
+			alert("Found you");
 			event.preventDefault();
 			submitNewRecord();
 		});
@@ -30,14 +33,14 @@
 
 <body>
 	<div id="wrapper">
-		<div>
+		<div id='newUser'>
 			<form>
 				<br />
 				<h3>Create your Vakpom profile</h3>
 				<table>
-				<tr>
-						<td><label for='username'>User Name</label><input
-							type='text' id='username' /><br /></td>
+					<tr>
+						<td><label for='username'>User Name</label><input type='text'
+							id='username' /><br /></td>
 					</tr>
 					<tr>
 						<td><label for='newFirstName'>First Name</label><input
@@ -56,8 +59,8 @@
 					</tr>
 
 					<tr>
-						<td><label for='newEmail'>Email</label><input
-							type='text' id='newEmail' /><br /></td>
+						<td><label for='newEmail'>Email</label><input type='text'
+							id='newEmail' /><br /></td>
 					</tr>
 					<tr>
 						<td height="2px"></td>
@@ -86,7 +89,7 @@
 					</tr>
 
 					<tr>
-						<td><label for="zip">Country</label> <input id="zip"
+						<td><label for="city">City</label> <input id="city"
 							type="text" size="40" /></td>
 					</tr>
 
@@ -94,29 +97,26 @@
 						<td height="2px"></td>
 					</tr>
 
-					<!-- <tr> -->
-					<!-- <td> -->
-					<!-- <label for="male">Male</label> -->
+					<tr>
+						<td><label for="country">Country</label> <input id="zip"
+							type="text" size="40" /></td>
+					</tr>
 
-					<!-- <input id="male" type="checkbox" /> -->
-					<!-- </td> -->
-					<!-- <td> -->
-					<!-- <label for="female">Female</label> -->
+					<tr>
+						<td height="2px"></td>
+					</tr>
 
-					<!-- <input id="female" type="checkbox" /> -->
-					<!-- </td> -->
-					<!-- </tr> -->
 					<tr>
 						<td height="10px"></td>
 					</tr>
 					<tr>
-						</td>
-						<td align="right"><input type="button" value="login"
-							id="loginButton" /></td>
-
+						
+						<td align="right"><input type='submit' value="Submit" /></td>
+						<td align="right"><input type="button" value="Close"
+							id="closeNewForm" /></td>
 					</tr>
-					</form>
 				</table>
+			</form>		
 		</div>
 	</div>
 </body>
