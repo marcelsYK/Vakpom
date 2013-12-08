@@ -4,10 +4,10 @@
 var urlHolder = new Object();
 
 function userCreationConfirmation() {
-	$.get(urlHolder.records, function(response) {
+	$.get('#', function(response) {
 		
  		alert("Thank you for registering; your account has been created.");
-		toggleForms('hide'); 
+		//toggleForms('hide'); 
  	});
 }
 
@@ -16,27 +16,30 @@ function submitNewRecord() {
 	
 	$.post(urlHolder.add, {
 			username: $('#newUsername').val(),
-			firstName: $('#newFirstName').val(),
-			lastName: $('#newLastName').val(),
-			password: $('#newPassword').val(),
-			email: $('#newEmail').val(),
-			zipcode: $('#zip').val(),
-			city: $('#city').val(),
-			country: $('#country').val()
+			firstName: $('#newFirstName').val()
+//			lastName: $('#newLastName').val(),
+//			password: $('#newPassword').val(),
+//			email: $('#newEmail').val(),
+//			zipcode: $('#zip').val(),
+//			city: $('#city').val(),
+//			country: $('#country').val()
 		}, 
 		function(response) {
 			if (response != null) {
 				userCreationConfirmation();
-				toggleForms('hide'); 
-				toggleCrudButtons('show');
+				//toggleForms('hide'); 
+				//toggleCrudButtons('show');
 				alert('Success! Record has been added.');
+				//window.location.href = "http://localhost:8080/vakpom/";
 			} else {
 				alert('Failure! An error has occurred!');
 			}
 		}
 	);	
 	
-	alert("AFTER Thank y*&**********8d.");
+
+	
+	
 }
 
 
