@@ -9,17 +9,24 @@
 <title>Vakpom</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ourstyle.css" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
 <script type="application/javascript">
 
 $(document).ready(function() {
 	$('#searchField').click(function(){
 	$(this).val('');
 })
+
+
 	
 	
     
 });
-</script>
+
+
+  </script>
+
+
 
 </head>
 
@@ -27,16 +34,15 @@ $(document).ready(function() {
 <body>
 <div id="wrapper">
 <div id="header">
-<ul id=menu>
-<li>Home</li>
-<li>About Us</li>
-<li>Business</li>
-<li>Your account</li>
-
+<div id="menuCont">
+<ul id="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Business</a></li>
+<li><a href="">Your account</a></li>
 </ul>
-<div id="title">
-<h2>Vakpom, Businesses that matters!</h2>
 </div>
+
 <div id="loginAndSearch">
 <ul id="login">
 <li><a href="<c:url value="/login"/>">Login</a></li>
@@ -48,6 +54,10 @@ $(document).ready(function() {
     <input type="button" id="search" value="Go" />
 </form>
 </div>
+<div id="title">
+<h2>Vakpom, Businesses that matters!</h2>
+</div>
+
 	
     
 </div> 

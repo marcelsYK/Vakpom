@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
+ <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type='text/javascript' src='<c:url value="/resources/js/create_accountCustom.js"/>'></script>
 <link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
 	

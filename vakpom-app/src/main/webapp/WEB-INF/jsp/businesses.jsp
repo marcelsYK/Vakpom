@@ -10,9 +10,6 @@
 <%-- 	<script type='text/javascript' src='<c:url value="/resources/js/jquery-1.9.1.min.js"/>'></script> --%>
 	
 	<script type='text/javascript' src='<c:url value="/resources/js/businessesCustom.js"/>'></script>
-
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
@@ -90,6 +87,17 @@
 </head>
 
 <body id="notsdi">
+
+<div id="menuCont">
+<ul id="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Business</a></li>
+<li><a href="">Your account</a></li>
+</ul>
+</div>
+
+<hr>
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
