@@ -30,7 +30,7 @@ function submitNewRecord() {
 				//toggleForms('hide'); 
 				//toggleCrudButtons('show');
 				alert('Success! Record has been added.');
-				//window.location.href = "http://localhost:8080/vakpom/";
+				window.location.href = "http://localhost:8080/vakpom/";
 			} else {
 				alert('Failure! An error has occurred!');
 			}
