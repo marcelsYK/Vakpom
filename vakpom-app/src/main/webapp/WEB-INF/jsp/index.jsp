@@ -27,6 +27,13 @@ $(document).ready(function() {
 <body>
 <div id="wrapper">
 <div id="header">
+<ul id=menu>
+<li>Home</li>
+<li>About Us</li>
+<li>Business</li>
+<li>Your account</li>
+
+</ul>
 <div id="title">
 <h2>Vakpom, Businesses that matters!</h2>
 </div>

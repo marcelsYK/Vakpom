@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
+<link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
 	<title>User Records</title>
 	<script type='text/javascript'>
 	$(function() {
@@ -42,7 +42,7 @@
   .ui-autocomplete-loading {
     background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
   }
-  #city { width: 25em; }
+ 
   </style>
   <script>
   $(function() {
@@ -89,7 +89,7 @@
   </script>
 </head>
 
-<body>
+<body id="notsdi">
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
@@ -97,9 +97,9 @@
 		<form>
 			<fieldset>
 				<legend>Create New Business</legend>
-				<label for='newBusinessName'>Name123456:</label><input type='text' id='newBusinessName'/><br />
+				<label for='newBusinessName'>Name:</label><input type='text' id='newBusinessName'/><br />
 				<label for='newDescription'>Description:</label><input type='text' id='newDescription'/><br />
-				<label for='newCity'>City</label><input	type='text' id='city'/><br />
+				<label for='newCity'>City</label><input	type='text' id='city' size="20"/><br />
 				<label for='newCountry'>Country</label><input type='text' id='newCountry'/><br/>
 				<label for='newPhone'>Phone</label><input type='tel' id='newPhone' /><br /> 
 				<label for='newType'>Type</label>
