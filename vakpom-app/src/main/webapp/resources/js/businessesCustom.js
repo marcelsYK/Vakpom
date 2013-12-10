@@ -28,10 +28,11 @@ function submitNewRecord() {
 	alert("BusinessCustom: " + $('#newBusinessName').val()),
 	$.post(urlHolder.add, {
 		businessName: $('#newBusinessName').val(),
+		description: $('#newDescription').val(),
 		type: $('#newType').val(),
 		phone: $('#newPhone').val(),
-		city: $('#newCity').val()
-	
+		city: $('#newCity').val(),
+		country: $('#country').val()
 			
 		}, 
 		function(response) {

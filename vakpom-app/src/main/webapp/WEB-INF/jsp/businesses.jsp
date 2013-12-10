@@ -93,22 +93,23 @@
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
-
-	<div id='newForm' class="ui-widget">
+	<div id='newForm' >
 		<form>
-  			<fieldset>
+			<fieldset>
 				<legend>Create New Business</legend>
-				<label for='newBusinessName'>Name</label><input type='text' id='newBusinessName'/><br/>
-				<label for='newCity'>City</label><input type='text' id='city'/><br/>
-				<label for='newPhone'>Phone</label><input type='tel' id='newPhone'/><br/>
+				<label for='newBusinessName'>Name123456:</label><input type='text' id='newBusinessName'/><br />
+				<label for='newDescription'>Description:</label><input type='text' id='newDescription'/><br />
+				<label for='newCity'>City</label><input	type='text' id='city'/><br />
+				<label for='newCountry'>Country</label><input type='text' id='newCountry'/><br/>
+				<label for='newPhone'>Phone</label><input type='tel' id='newPhone' /><br /> 
 				<label for='newType'>Type</label>
-					<select id='newType'>
-						<option value='1'>Tailor</option>
-						<option value='2' selected='selected'>Hair Dresser</option>
-					</select>
-  			</fieldset>
-			<input type='button' value='Close' id='closeNewForm' />
-			<input type='submit' value='Submit'/>
+				<select id='newType'>
+					<option value='1'>Tailor</option>
+					<option value='2' selected='selected'>Hair Dresser</option>
+				</select>
+			</fieldset>
+			<input type='button' value='Close' id='closeNewForm' /> <input
+				type='submit' value='Submit' />
 		</form>
 	</div>
 	

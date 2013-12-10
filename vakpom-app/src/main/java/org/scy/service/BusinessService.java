@@ -16,7 +16,6 @@ public class BusinessService {
 	@Autowired
 	BusinessRepository businessRepository;
 	
-
 	public Business create(Business business) {
 		business.setId(UUID.randomUUID().toString());
 		
