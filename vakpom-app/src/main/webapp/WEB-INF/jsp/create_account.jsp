@@ -26,7 +26,7 @@
 </script>
 </head>
 
-<body>
+<body id="notsdi">
 	<div id="wrapper">
 		<div id='newUser'>
 			<form>
