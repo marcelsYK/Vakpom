@@ -12,7 +12,7 @@ function userCreationConfirmation() {
 }
 
 function submitNewRecord() {
-	alert("Thank y*&**********8d.");
+	
 	
 	$.post(urlHolder.add, {
 			username: $('#newUsername').val(),
@@ -27,8 +27,6 @@ function submitNewRecord() {
 		function(response) {
 			if (response != null) {
 				userCreationConfirmation();
-				//toggleForms('hide'); 
-				//toggleCrudButtons('show');
 				alert('Success! Record has been added.');
 				window.location.href = "http://localhost:8080/vakpom/";
 			} else {

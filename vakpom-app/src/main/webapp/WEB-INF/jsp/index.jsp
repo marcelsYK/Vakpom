@@ -16,11 +16,7 @@ $(document).ready(function() {
 	$('#searchField').click(function(){
 	$(this).val('');
 })
-
-
-	
-	
-    
+ 
 });
 
 
