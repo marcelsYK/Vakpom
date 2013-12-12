@@ -1,8 +1,10 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/users/create" var="addUrl"/>
-<c:url value="/users/update" var="editUrl"/>
-<c:url value="/users/delete" var="deleteUrl"/>
+<c:url value="/businesses/create" var="addUrl"/>
+<c:url value="/businesses/update" var="editUrl"/>
+<c:url value="/businesses/delete" var="deleteUrl"/>
+<c:url value="/businesses/records" var="recordsUrl"/>
+
 
 <html>
 <head>
@@ -13,27 +15,67 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
-	<title>User Records</title>
+	<title>Business</title>
 	<script type='text/javascript'>
+		
 	$(function() {
-	
-		urlHolder.add = '${addUrl}';
-		loadTable();
-		
-		$('#newForm').submit(function() {
-			event.preventDefault();
-			submitNewRecord();
-		});
-		
-		$('#closeNewForm').click(function() { 
-			toggleForms('hide'); 
-			toggleCrudButtons('show');
-		});
-		
-		
-	});
-	</script>
-	
+               // init
+               urlHolder.records = '${recordsUrl}';
+               urlHolder.add = '${addUrl}';
+               urlHolder.edit = '${editUrl}';
+               urlHolder.del = '${deleteUrl}';
+               loadTable();
+               
+               $('#newBtn').click(function() { 
+                       toggleForms('new');
+                       toggleCrudButtons('hide');
+               });
+               
+               $('#editBtn').click(function() { 
+                       if (hasSelected()) {
+                               toggleForms('edit');
+                               toggleCrudButtons('hide');
+                               fillEditForm();
+                       }
+                       });
+               
+               $('#viewBtn').click(function() { 
+                   if (hasSelected()) {
+                       toggleForms('view');
+                       toggleCrudButtons('hide');
+                       fillEditForm();
+               }
+               });
+               $('#reloadBtn').click(function() { 
+                       loadTable();
+               });
+               $('#deleteBtn').click(function() {
+                       if (hasSelected()) { 
+                               submitDeleteRecord();
+                       }
+               });
+               
+               $('#newForm').submit(function() {
+                       event.preventDefault();
+                       submitNewRecord();
+               });
+               
+               $('#editForm').submit(function() {
+                       event.preventDefault();
+                       submitUpdateRecord();
+               });
+
+               $('#closeNewForm').click(function() { 
+                       toggleForms('hide'); 
+                       toggleCrudButtons('show');
+               });
+               
+               $('#closeEditForm').click(function() { 
+                       toggleForms('hide'); 
+                       toggleCrudButtons('show');
+               });
+       });
+       </script>
 	
 	<style>
   .ui-autocomplete-loading {
@@ -90,7 +132,7 @@
 
 <div id="menuCont">
 <ul id="menu">
-<li><a href="#">Home</a></li>
+<li><a href="<c:url value="/"/>">Home</a></li>
 <li><a href="#">About Us</a></li>
 <li><a href="#">Business</a></li>
 <li><a href="">Your account</a></li>
@@ -98,9 +140,33 @@
 </div>
 
 <hr>
-	<h1 id='banner'>Record System</h1>
+	<h1 id='banner'>Business Listings</h1>
 	<hr/>
 	
+	<table id='tableBusinesses' >
+               <caption></caption>
+               <thead>
+                       <tr >
+                               <th></th>
+                               <th>Name</th>
+                               <th>Type</th>
+                               <th>Address</th>
+                               <th>City</th>
+                                <th>Country</th>
+                               <th>Phone Number</th>
+                              
+                               
+                       </tr>
+               </thead>
+       </table>
+	<div id='controlBar'>
+               <input type='button' value='New' id='newBtn' />
+               <input type='button' value='Delete' id='deleteBtn' />
+               <input type='button' value='Edit' id='editBtn' />
+               <input type='button' value='Reload' id='reloadBtn' />
+                 <input type='button' value='View' id='viewBtn' />
+       </div>
+ 
 	<div id='newForm' >
 		<form>
 			<fieldset>
@@ -120,6 +186,38 @@
 				type='submit' value='Submit' />
 		</form>
 	</div>
+	
+	 <div id='editForm'>
+               <form>
+                         <fieldset>
+                               <legend>Edit Record</legend>
+                               <input type='hidden' id='editBusinessname'/>
+                               <label for='editBusinessName'>Business Name</label><input type='text' id='editBusinessName'/><br/>
+                               <label for='editDesc'>Description</label><input type='text' id='editDesc'/><br/>
+                               <label for='editType'>Type</label>
+                                       <select id='editType'>
+                                               <option value='1'>Tailor</option>
+                                               <option value='2' selected='selected'>Hair Dresser</option>
+                                       </select>
+                       </fieldset>
+                       <input type='button' value='Close' id='closeEditForm' />
+                       <input type='submit' value='Submit'/>
+               </form>
+       </div>
+       
+        <div id='viewForm'>
+               <form>
+                         <fieldset>
+                               <legend>View Business</legend>
+                               <label >Business Name</label><br/>
+                               <label for='viewDesc'>Description</label><br/>
+                               <label for='viewType'>Type</label><br/>
+                               <label for='viewType'>City</label><br/>
+                               <label for='viewType'>Country</label><br/>        
+                       </fieldset>
+                      <input type='button' value='Close' id='closeEditForm' /> 	
+               </form>
+       </div>
 	
 </body>
 </html>

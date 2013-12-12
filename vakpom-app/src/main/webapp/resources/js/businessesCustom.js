@@ -13,7 +13,9 @@ function loadTable() {
 			row += '<td><input type="radio" name="index" id="index" value="'+i+'"></td>';
 			row += '<td>' + response.businesses[i].businessName + '</td>';
 			row += '<td>' + response.businesses[i].type + '</td>';
+			row += '<td>' + response.businesses[i].streetAddress + '</td>';
 			row += '<td>' + response.businesses[i].city + '</td>';
+			row += '<td>' + response.businesses[i].country + '</td>';
 			row += '<td>' + response.businesses[i].phone + '</td>';
 			row += '</tr>';
 	 		$('#tableBusinesses').append(row);
@@ -31,9 +33,9 @@ function submitNewRecord() {
 		description: $('#newDescription').val(),
 		type: $('#newType').val(),
 		phone: $('#newPhone').val(),
-		city: $('#newCity').val(),
-		country: $('#country').val()
-			
+		city: $('#city').val(),
+		country: $('#newCountry').val(),
+		streetAddress:$('#newStreetAddress').val()
 		}, 
 		function(response) {
 			alert('response');
@@ -119,7 +121,7 @@ function resetNewForm() {
 	$('#newType').val('');
 	$('#newCity').val('');
 	$('#newPhone').val('');
-	//$('#newRole').val('2');
+	
 }
 
 function resetEditForm() {
@@ -131,17 +133,25 @@ function resetEditForm() {
 function toggleForms(id) {
 	if (id == 'hide') {
 		$('#newForm').hide();
+		$('#viewForm').hide();
 		$('#editForm').hide();
 		
 	} else if (id == 'new') {
  		resetNewForm();
  		$('#newForm').show();
+ 		$('#viewForm').hide();
  		$('#editForm').hide();
  		
 	} else if (id == 'edit') {
  		resetEditForm();
  		$('#newForm').hide();
+ 		$('#viewForm').hide();
  		$('#editForm').show();
+	}else if (id == 'view') {
+ 		
+ 		$('#newForm').hide();
+ 		$('#editForm').hide();
+ 		$('#viewForm').show();
 	}
 }
 

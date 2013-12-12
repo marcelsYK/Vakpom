@@ -65,12 +65,27 @@ public class InitMongoService {
 		Business uno = new Business(UUID.randomUUID().toString(), "Uno",
 				"School", "blablabla", "1212121", "null", "Pacific", "68114",
 				"Omaha", "USA", 10, 2);
-
+		Business unl = new Business(UUID.randomUUID().toString(), "Unl",
+				"School", "blablabla", "454545", "null", "Q street", "68184",
+				"Lincoln", "USA", 10, 2);
+		Business Hokuto = new Business(UUID.randomUUID().toString(), "Hokuto",
+				"School", "blablabla", "454545", "null", "Chen Street", "7878",
+				"Pekin", "China", 10, 2);
+		Business esgis= new Business(UUID.randomUUID().toString(), "Esgis",
+				"School", "blablabla", "454545", "null", "", "5565",
+				"Lome", "Togo", 10, 2);
+		Business alocodrome = new Business(UUID.randomUUID().toString(), "alocodrome",
+				"restaurant", "blablablxda", "2251545", "null", "Cocody", "1536",
+				"Abidjan", "Ivory Coast", 10, 2);
+		
 		// Insert to db
 //		mongoTemplate.insert(adminRole, "role");
 //		mongoTemplate.insert(userRole, "role");
 		mongoTemplate.insert(uno, "business");
-
+		mongoTemplate.insert(Hokuto, "business");
+		mongoTemplate.insert(esgis, "business");
+		mongoTemplate.insert(alocodrome, "business");
+		mongoTemplate.insert(unl, "business");
 		mongoTemplate.insert(batchUsersToSave, "user");
 	}
 }

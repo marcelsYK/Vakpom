@@ -32,9 +32,9 @@ $(document).ready(function() {
 <div id="header">
 <div id="menuCont">
 <ul id="menu">
-<li><a href="#">Home</a></li>
+<li><a href="<c:url value="/"/>">Home</a></li>
 <li><a href="#">About Us</a></li>
-<li><a href="#">Business</a></li>
+<li><a href="<c:url value="/businesses"/>">Business</a></li>
 <li><a href="">Your account</a></li>
 </ul>
 </div>

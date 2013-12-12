@@ -21,13 +21,13 @@ h1, hr {
 }
 
 table {
-	border: 1px solid;
+	
 	width: 100%;
 	border-collapse: collapse;
 }
 
 tr, td, th {
-	border: 1px solid;
+	
 	text-align: left;
 	padding: 5px;
 }

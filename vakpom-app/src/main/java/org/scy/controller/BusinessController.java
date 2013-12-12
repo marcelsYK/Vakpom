@@ -50,7 +50,8 @@ public class BusinessController {
 			@RequestParam String type,
 			@RequestParam String phone,
 			@RequestParam String city,
-			@RequestParam String country
+			@RequestParam String country,
+			@RequestParam String streetAddress
 			) {
 		Business existingBusiness = new Business();
 		existingBusiness.setId(id);
@@ -60,6 +61,7 @@ public class BusinessController {
 		existingBusiness.setCity(city);
 		existingBusiness.setPhone(phone);
 		existingBusiness.setCountry(country);
+		existingBusiness.setStreetAddress(streetAddress);
 
 		return businessService.create(existingBusiness);
 	}
