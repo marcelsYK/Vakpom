@@ -15,8 +15,10 @@ function loadTable() {
 			row += '<td>' + response.businesses[i].type + '</td>';
 			row += '<td>' + response.businesses[i].streetAddress + '</td>';
 			row += '<td>' + response.businesses[i].city + '</td>';
+			
 			row += '<td>' + response.businesses[i].country + '</td>';
 			row += '<td>' + response.businesses[i].phone + '</td>';
+			
 			row += '</tr>';
 	 		$('#tableBusinesses').append(row);
  		}
@@ -110,11 +112,15 @@ function hasSelected() {
 
 function fillEditForm() {
 	var selected = $('input:radio[name=index]:checked').val();
-	$('#editBusinessname').val( $('#tableBusinesses').data('model')[selected].businessName );
-	$('#editType').val( $('#tableBusinesses').data('model')[selected].type );
-	$('#editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
-	/*$('#editRole').val( $('#tableBusinesses').data('model')[selected].role.role );*/
+	$('.editBusinessName').val( $('#tableBusinesses').data('model')[selected].businessName );
+	$('.editDesc').val( $('#tableBusinesses').data('model')[selected].description );
+	$('.editStreetAddress').val( $('#tableBusinesses').data('model')[selected].streetAddress );
+	$('.editType').val( $('#tableBusinesses').data('model')[selected].type );
+	$('.editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
+	$('.editCity').val( $('#tableBusinesses').data('model')[selected].city);
+	$('.editCountry').val( $('#tableBusinesses').data('model')[selected].country);
 }
+
 
 function resetNewForm() {
 	$('#newBusinessname').val('');

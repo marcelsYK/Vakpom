@@ -191,11 +191,11 @@
                <form>
                          <fieldset>
                                <legend>Edit Record</legend>
-                               <input type='hidden' id='editBusinessname'/>
-                               <label for='editBusinessName'>Business Name</label><input type='text' id='editBusinessName'/><br/>
-                               <label for='editDesc'>Description</label><input type='text' id='editDesc'/><br/>
+                               <input type='hidden' class='editBusinessname'/>
+                               <label for='editBusinessName'>Name</label><input type='text' class='editBusinessName'/><br/>
+                               <label for='editDesc'>Description</label><input type='text' class='editDesc'/><br/>
                                <label for='editType'>Type</label>
-                                       <select id='editType'>
+                                       <select class='editType'>
                                                <option value='1'>Tailor</option>
                                                <option value='2' selected='selected'>Hair Dresser</option>
                                        </select>
@@ -206,14 +206,20 @@
        </div>
        
         <div id='viewForm'>
+        <div id='image' style="float:right;">
+        
+        
+        </div>
                <form>
                          <fieldset>
                                <legend>View Business</legend>
-                               <label >Business Name</label><br/>
-                               <label for='viewDesc'>Description</label><br/>
-                               <label for='viewType'>Type</label><br/>
-                               <label for='viewType'>City</label><br/>
-                               <label for='viewType'>Country</label><br/>        
+                               <label for='editBusinessName'>Name</label><input type='text' class='editBusinessName' readonly="readonly"/><br/>
+                               <label for='editDesc'>Description</label><input type='text' class='editDesc'readonly="readonly"/><br/>
+                              <label for='editPhone'>Phone</label><input type='text' class='editPhone'readonly="readonly"/><br/>
+                               <label for='editStreetAddress'>Address</label><input type='text' class='editStreetAddress'readonly="readonly"/><br/>
+                               <label for='editType'>Type</label><input type='text' class='editType'readonly="readonly"/><br/>
+                               <label for='editCity'>City</label><input type='text' class='editCity'readonly="readonly"/><br/>
+                               <label for='editCountry'>Country</label><input type='text' class='editCountry'readonly="readonly"/><br/>        
                        </fieldset>
                       <input type='button' value='Close' id='closeEditForm' /> 	
                </form>
