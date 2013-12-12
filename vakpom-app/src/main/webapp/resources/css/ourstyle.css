@@ -22,6 +22,27 @@ body{
 				
 }
 
+#menuCont{
+	float:left;
+	width:500px;
+	height:40px;
+}
+
+#menu li{
+	float:left;
+	list-style:none;
+	text-decoration:none;
+	margin-right:15px;
+		
+}
+
+#menu li a{
+	text-decoration:none;
+}
+#menu li a:hover{
+	opacity:0.6;
+	color:#FFF;
+}
 
 #login li{
 	float:left;
@@ -42,6 +63,7 @@ body{
 #loginAndSearch{
 	float:right;
 	width:200px;
+	;
 }
 #title{
 	float:left;

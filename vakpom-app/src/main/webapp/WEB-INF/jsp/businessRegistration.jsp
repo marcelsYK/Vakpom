@@ -9,7 +9,7 @@
 
 <script type='text/javascript'
 	src='<c:url value="/resources/js/businessesCustom.js"/>'></script>
-
+<link rel="stylesheet" type='text/css' href='<c:url value="/resources/css/ourstyle.css"/>'/>
 
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -97,7 +97,7 @@
 </script>
 </head>
 
-<body>
+<body id="notsdi">
 	<h1 id='banner'>Record System</h1>
 	<hr />
 	<div id='newForm' class="ui-widget">
