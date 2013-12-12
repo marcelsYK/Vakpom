@@ -24,7 +24,6 @@ public class BusinessController {
 
 	@RequestMapping
 	public String getBusinessesPage() {
-		System.out.println("Inside Business");
 		return "businesses";
 	}
 
@@ -33,34 +32,35 @@ public class BusinessController {
 	BusinessListDto getBusinesses() {
 		BusinessListDto businessListDto = new BusinessListDto();
 		businessListDto.setBusinesses(businessService.readAll());
+		System.out.println("Inside getBusinesses");
 		return businessListDto;
 	}
-
+	
 	@RequestMapping(value = "/get")
 	public @ResponseBody
 	Business get(@RequestBody Business business) {
-		System.out.println("Inside Business");
+	
 		return businessService.read(business);
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public @ResponseBody
-	Business create(@RequestParam String id, @RequestParam String businessName,
-			@RequestParam String description,
-			@RequestParam String type,
-			@RequestParam String phone,
-			@RequestParam String city,
-			@RequestParam String country
+	Business create( @RequestParam String businessName,
+			@RequestParam String description
+//			@RequestParam String type,
+//			@RequestParam String phone,
+//			@RequestParam String city,
+//			@RequestParam String country
 			) {
 		Business existingBusiness = new Business();
-		existingBusiness.setId(id);
 		existingBusiness.setBusinessName(businessName);
-		existingBusiness.setDescription(description);
-		existingBusiness.setType(type);
-		existingBusiness.setCity(city);
-		existingBusiness.setPhone(phone);
-		existingBusiness.setCountry(country);
-
+//		existingBusiness.setDescription(description);
+//		existingBusiness.setType(type);
+//		existingBusiness.setCity(city);
+//		existingBusiness.setPhone(phone);
+//		existingBusiness.setCountry(country);
+		
+		logger.debug("Business has been saved!!!");
 		return businessService.create(existingBusiness);
 	}
 

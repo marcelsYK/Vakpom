@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.UUID;
 
 import org.scy.domain.Business;
-import org.scy.domain.Role;
 import org.scy.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -58,19 +57,20 @@ public class InitMongoService {
 
 		batchUsersToSave.add(san);
 
-		System.out.println("test8888888888888888888888888888"
-				+ san.getFirstName());
 
 		// Create new business records
 		Business uno = new Business(UUID.randomUUID().toString(), "Uno",
 				"School", "blablabla", "1212121", "null", "Pacific", "68114",
 				"Omaha", "USA", 10, 2);
-
+		Business uno2 = new Business(UUID.randomUUID().toString(), "Uno",
+				"School", "blablabla", "1212121", "null", "Pacific", "68114",
+				"Omaha", "USA", 10, 2);
 		// Insert to db
 //		mongoTemplate.insert(adminRole, "role");
 //		mongoTemplate.insert(userRole, "role");
 		mongoTemplate.insert(uno, "business");
-
+		mongoTemplate.insert(uno2, "business");
+		
 		mongoTemplate.insert(batchUsersToSave, "user");
 	}
 }

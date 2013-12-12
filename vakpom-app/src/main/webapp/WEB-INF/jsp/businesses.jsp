@@ -1,8 +1,6 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/users/create" var="addUrl"/>
-<c:url value="/users/update" var="editUrl"/>
-<c:url value="/users/delete" var="deleteUrl"/>
+<c:url value="/businesses/records" var="recordsUrl"/>
 
 <html>
 <head>
@@ -16,12 +14,12 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-	<title>User Records</title>
+	<title>Businesses Records</title>
 	<script type='text/javascript'>
 	$(function() {
 	
 		urlHolder.add = '${addUrl}';
-		loadTable();
+		urlHolder.records = '${recordsUrl}';
 		
 		$('#newForm').submit(function() {
 			event.preventDefault();
@@ -93,13 +91,26 @@
 	<h1 id='banner'>Record System</h1>
 	<hr/>
 	
+	<table id='tableBusinesses'>
+		<caption></caption>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>City</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+	</table>
+	
 	<div id='newForm' >
 		<form>
 			<fieldset>
 				<legend>Create New Business</legend>
 				<label for='newBusinessName'>Name123456:</label><input type='text' id='newBusinessName'/><br />
 				<label for='newDescription'>Description:</label><input type='text' id='newDescription'/><br />
-				<label for='newCity'>City</label><input	type='text' id='city'/><br />
+				<label for='city'>City</label><input	type='text' id='city'/><br />
 				<label for='newCountry'>Country</label><input type='text' id='newCountry'/><br/>
 				<label for='newPhone'>Phone</label><input type='tel' id='newPhone' /><br /> 
 				<label for='newType'>Type</label>

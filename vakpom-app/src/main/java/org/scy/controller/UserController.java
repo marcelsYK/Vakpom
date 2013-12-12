@@ -48,7 +48,6 @@ public class UserController {
 //			@RequestParam String city,
 //			@RequestParam String country
 			) {
-System.out.println("INSIDE ******UserController");
 		User newUser = new User();
 		newUser.setUsername(username);
 //		newUser.setPassword(password);

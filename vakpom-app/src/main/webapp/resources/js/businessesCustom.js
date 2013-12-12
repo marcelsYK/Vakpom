@@ -5,7 +5,7 @@ var urlHolder = new Object();
 
 function loadTable() {
 	$.get(urlHolder.records, function(response) {
-		
+		alert('Loading tables.');
  		$('#tableBusinesses').find('tbody').remove();
  		
  		for (var i=0; i<response.businesses.length; i++) {
@@ -25,28 +25,48 @@ function loadTable() {
 }
 
 function submitNewRecord() {
-	alert("BusinessCustom: " + $('#newBusinessName').val()),
 	$.post(urlHolder.add, {
 		businessName: $('#newBusinessName').val(),
-		description: $('#newDescription').val(),
-		type: $('#newType').val(),
-		phone: $('#newPhone').val(),
-		city: $('#newCity').val(),
-		country: $('#country').val()
+		description: $('#newDescription').val()
+//		type: $('#newType').val(),
+//		phone: $('#newPhone').val(),
+//		city: $('#city').val(),
+//		country: $('#country').val()
 			
 		}, 
 		function(response) {
-			alert('response');
 			if (response != null) {
-				loadTable();
-				toggleForms('hide'); 
-				toggleCrudButtons('show');
+				
+				toggleTable('show');
+				toggleForms('hide');
+				//window.location.href = "http://localhost:8080/vakpom/businesses/viewBusinesses";
 				alert('Success! A new Business has been added.');
 			} else {
 				alert('Failure! An error has occurred!');
 			}
 		}
 	);	
+
+}
+
+
+
+
+
+function toggleTable(id) {
+	
+	  var lTable = document.getElementById("tableBusinesses");
+	    lTable.style.display = (lTable.style.display == "table") ? "none" : "table";
+//	    
+//	if (id == 'hide') {
+//		$('#tableBusinesses').hide();		
+//	} else if (id == 'new') {
+// 		$('#tableBusinesses').hide();
+// 		
+//	} else if (id == 'view') {
+// 		$('#tableBusinesses').show();
+// 		loadTable();
+//	}
 }
 
 function submitDeleteRecord() {
@@ -86,15 +106,6 @@ function submitUpdateRecord() {
 	);
 }
 
-/*function getRole(role) {
-	if (role == 1) {
-		return 'Admin';
-	} else if (role == 2) {
-		return 'Regular';
-	} else {
-		return 'Unknown';
-	} 
-}*/
 
 function hasSelected() {
 	var selected = $('input:radio[name=index]:checked').val();
@@ -111,7 +122,6 @@ function fillEditForm() {
 	$('#editBusinessname').val( $('#tableBusinesses').data('model')[selected].businessName );
 	$('#editType').val( $('#tableBusinesses').data('model')[selected].type );
 	$('#editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
-	/*$('#editRole').val( $('#tableBusinesses').data('model')[selected].role.role );*/
 }
 
 function resetNewForm() {
@@ -119,7 +129,6 @@ function resetNewForm() {
 	$('#newType').val('');
 	$('#newCity').val('');
 	$('#newPhone').val('');
-	//$('#newRole').val('2');
 }
 
 function resetEditForm() {

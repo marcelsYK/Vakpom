@@ -10,13 +10,11 @@ public class MediatorController {
 
 	/*@RequestMapping
 	public String getHomePage() {
-		System.out.println();
 		return "redirect:/users";
 	}
 	
 	@RequestMapping
 	public String getHomepage() {
-		System.out.println("Inside media");
 		return "redirect:/businesses";
 	}*/
 	

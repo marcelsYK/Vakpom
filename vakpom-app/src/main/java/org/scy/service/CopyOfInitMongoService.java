@@ -1,20 +1,13 @@
 package org.scy.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
-import org.scy.domain.Business;
-import org.scy.domain.Role;
-import org.scy.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**
  * Service for initializing MongoDB with sample data using {@link MongoTemplate}
  */
 public class CopyOfInitMongoService {
-
+	
+/*
 	@Autowired
 	MongoTemplate mongoTemplate;
 
@@ -35,6 +28,7 @@ public class CopyOfInitMongoService {
 		userRole.setRole(2);
 		
 		// Create new user records
+		
 		
 		List<User> batchUsersToSave = new ArrayList<User>();
 		User john = new User(UUID.randomUUID().toString(), "John", "Smith",
@@ -61,5 +55,5 @@ public class CopyOfInitMongoService {
 		mongoTemplate.insert(uno,"business");
 		
 		mongoTemplate.insert(batchUsersToSave , "user");
+*/
 	}
-}
