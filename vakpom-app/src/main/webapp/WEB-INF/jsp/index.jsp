@@ -8,7 +8,18 @@
 <head>
 <title>Vakpom</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ourstyle.css" />
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  
+<style>
+  .ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+  }
+  </style>
 
 <script type="application/javascript">
 
@@ -18,11 +29,39 @@ $(document).ready(function() {
 })
  
 });
+</script>
 
-
+  <script>
+  $.widget( "custom.catcomplete", $.ui.autocomplete, {
+    _renderMenu: function( ul, items ) {
+      var that = this,
+        currentCategory = "";
+      $.each( items, function( index, item ) {
+        if ( item.category != currentCategory ) {
+          ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+          currentCategory = item.category;
+        }
+        that._renderItemData( ul, item );
+      });
+    }
+  });
   </script>
-
-
+  <script>
+  $(function() {
+    var data = [
+      { label: "Uno", category: "School" },
+      { label: "Unl", category: "School" },
+      { label: "Hokuto", category: "School" },
+      { label: "Esgis", category: "School" },
+      { label: "alocodrome", category: "Restaurant" }
+    ];
+ 
+    $( "#search" ).catcomplete({
+      delay: 0,
+      source: data
+    });
+  });
+  </script>
 
 </head>
 
@@ -46,8 +85,10 @@ $(document).ready(function() {
 </ul>
 
 <form name="searchtab" action="#" method="post">
-    <input type="text" value="Business search" id="searchField" />
-    <input type="button" id="search" value="Go" />
+<label for="search">Search: </label>
+<input id="search">
+
+    <input type="button" id="searchButton" value="Go" />
 </form>
 </div>
 <div id="title">

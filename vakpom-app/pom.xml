@@ -87,7 +87,7 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- A seamless aspect-oriented extension to the Java programming language -->
+		<!-- An aspect-oriented extension to the Java programming language -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>

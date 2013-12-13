@@ -168,4 +168,30 @@ public class Business {
 		this.imageUrl = imageUrl;
 	}
 
+	/**
+	 * toString method for Business
+	 *
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+	    final StringBuilder sb = new StringBuilder();
+	
+	 sb.append("Id :  " + this.id == null ? "" :  this.id  + ",");
+	 sb.append("Business Name :  " + this.businessName == null ? "" :  this.businessName  + ",");
+	 sb.append("Type :  " + this.type == null ? "" :  this.type  + ",");
+	 sb.append("Description :  " + this.description == null ? "" :  this.description  + ",");
+	 sb.append("Phone :  " + this.phone == null ? "" :  this.phone  + ",");
+	 sb.append("Image Url :  " + this.imageUrl == null ? "" :  this.imageUrl  + ",");
+	 sb.append("Street Address :  " + this.streetAddress == null ? "" :  this.streetAddress  + ",");
+	 sb.append("Zip Code :  " + this.zipCode == null ? "" :  this.zipCode  + ",");
+	 sb.append("City :  " + this.city == null ? "" :  this.city  + ",");
+	 sb.append("Country :  " + this.country == null ? "" :  this.country  + ",");
+	 sb.append("Total Rating :  " + this.totalRating + ",");
+	 sb.append("Times Rated :  " + this.timesRated + ",");
+	 sb.append("Final Rating :  " + this.finalRating + ","); 
+	 return "Business [" + sb.toString() + "]";
+	}
+
+	
 }

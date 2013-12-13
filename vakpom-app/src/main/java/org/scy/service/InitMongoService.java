@@ -20,20 +20,9 @@ public class InitMongoService {
 
 	public void init() {
 		// Drop existing collections
-//		mongoTemplate.dropCollection("role");
 		mongoTemplate.dropCollection("user");
 		mongoTemplate.dropCollection("business");
 
-		// Create new role records
-
-/*		Role adminRole = new Role();
-		adminRole.setId(UUID.randomUUID().toString());
-		adminRole.setRole(1);
-
-		Role userRole = new Role();
-		userRole.setId(UUID.randomUUID().toString());
-		userRole.setRole(2);
-*/
 		// Create new user records
 
 		List<User> batchUsersToSave = new ArrayList<User>();
@@ -75,12 +64,10 @@ public class InitMongoService {
 				"School", "blablabla", "454545", "null", "", "5565",
 				"Lome", "Togo", 10, 2);
 		Business alocodrome = new Business(UUID.randomUUID().toString(), "alocodrome",
-				"restaurant", "blablablxda", "2251545", "null", "Cocody", "1536",
+				"Restaurant", "blablablxda", "2251545", "null", "Cocody", "1536",
 				"Abidjan", "Ivory Coast", 10, 2);
 		
 		// Insert to db
-//		mongoTemplate.insert(adminRole, "role");
-//		mongoTemplate.insert(userRole, "role");
 		mongoTemplate.insert(uno, "business");
 		mongoTemplate.insert(Hokuto, "business");
 		mongoTemplate.insert(esgis, "business");

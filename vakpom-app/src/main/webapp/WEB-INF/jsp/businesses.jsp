@@ -42,7 +42,6 @@
                $('#viewBtn').click(function() { 
                    if (hasSelected()) {
                        toggleForms('view');
-                       toggleCrudButtons('hide');
                        fillViewForm();
                }
                });
@@ -205,11 +204,7 @@
                </form>
        </div>
        
-        <div id='viewForm'>
-        
-        
-        
-       
+        <div id='viewForm'>    
                <form style="width: 100%">
                          <fieldset>
                                <legend>View Business</legend>

@@ -1,5 +1,7 @@
 package org.scy.controller;
 
+import java.util.List;
+
 import org.scy.domain.Business;
 import org.scy.dto.BusinessListDto;
 import org.scy.service.BusinessService;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/businesses")
@@ -24,9 +27,17 @@ public class BusinessController {
 
 	@RequestMapping
 	public String getBusinessesPage() {
-		System.out.println("Inside Business");
+	
 		return "businesses";
 	}
+	
+	 @RequestMapping(value = "/get", method = RequestMethod.GET)
+	   public ModelAndView student(@RequestBody String businessName) {
+		 List <Business> businesses = businessService.findAllByBusinessName(businessName);
+		 
+		 return new ModelAndView("businesses", "business", businesses.get(0));
+	   }
+	 
 
 	@RequestMapping(value = "/records")
 	public @ResponseBody
@@ -38,9 +49,11 @@ public class BusinessController {
 
 	@RequestMapping(value = "/get")
 	public @ResponseBody
-	Business get(@RequestBody Business business) {
+	Business get(@RequestBody String businessName) {
+	List <Business> businesses = businessService.findAllByBusinessName(businessName);
+		
 		System.out.println("Inside Business");
-		return businessService.read(business);
+		return businessService.read( businesses.get(0));
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
