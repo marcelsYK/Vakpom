@@ -29,7 +29,7 @@ function loadTable() {
 }
 
 function submitNewRecord() {
-	alert("BusinessCustom: " + $('#newBusinessName').val()),
+	
 	$.post(urlHolder.add, {
 		businessName: $('#newBusinessName').val(),
 		description: $('#newDescription').val(),
