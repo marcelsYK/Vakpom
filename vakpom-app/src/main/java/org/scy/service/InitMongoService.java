@@ -63,7 +63,7 @@ public class InitMongoService {
 
 		// Create new business records
 		Business uno = new Business(UUID.randomUUID().toString(), "Uno",
-				"School", "blablabla", "1212121", "null", "Pacific", "68114",
+				"School", "blablabla", "1212121", "walmart.jpg", "Pacific", "68114",
 				"Omaha", "USA", 10, 2);
 		Business unl = new Business(UUID.randomUUID().toString(), "Unl",
 				"School", "blablabla", "454545", "null", "Q street", "68184",

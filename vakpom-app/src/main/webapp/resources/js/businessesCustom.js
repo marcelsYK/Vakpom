@@ -122,6 +122,24 @@ function fillEditForm() {
 }
 
 
+function fillViewForm() {
+	var selected = $('input:radio[name=index]:checked').val();
+	var imagepath='http://localhost:8080/vakpom/resources/images/';
+	var imageurl= imagepath + $('#tableBusinesses').data('model')[selected].imageUrl;
+	$('h3.editBusinessName').text( $('#tableBusinesses').data('model')[selected].businessName );
+	$('p.editDesc').text( $('#tableBusinesses').data('model')[selected].description );
+	$('.editStreetAddress').val( $('#tableBusinesses').data('model')[selected].streetAddress );
+	$('span.editType').text( '' + $('#tableBusinesses').data('model')[selected].type );
+	$('.editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
+	$('span.editCity').text( '' + $('#tableBusinesses').data('model')[selected].city);
+	$('span.editCountry').text( $('#tableBusinesses').data('model')[selected].country);
+	$('.imagelink').attr('src', imageurl);
+	
+	alert(imageurl);
+}
+
+
+
 function resetNewForm() {
 	$('#newBusinessname').val('');
 	$('#newType').val('');

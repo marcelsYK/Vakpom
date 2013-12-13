@@ -43,7 +43,7 @@
                    if (hasSelected()) {
                        toggleForms('view');
                        toggleCrudButtons('hide');
-                       fillEditForm();
+                       fillViewForm();
                }
                });
                $('#reloadBtn').click(function() { 
@@ -206,20 +206,23 @@
        </div>
        
         <div id='viewForm'>
-        <div id='image' style="float:right;">
         
         
-        </div>
-               <form>
+        
+       
+               <form style="width: 100%">
                          <fieldset>
                                <legend>View Business</legend>
-                               <label for='editBusinessName'>Name</label><input type='text' class='editBusinessName' readonly="readonly"/><br/>
-                               <label for='editDesc'>Description</label><input type='text' class='editDesc'readonly="readonly"/><br/>
-                              <label for='editPhone'>Phone</label><input type='text' class='editPhone'readonly="readonly"/><br/>
+                               <img style="float: right; border-radius:3px;" class='imagelink' src="" width="150" height="150"/>
+                               <h3 class='editBusinessName'></h3><br/>
+                               <span><b>Category: </b></span> <span class='editType'></span><br/><br/>
+                                <span class='editCity'></span> <span class='editCountry'></span><br/><br/>
+                               <p class='editDesc'></p><br/>
+                              <span><b>Phone</b></span><span class='editPhone'></span><br/>
                                <label for='editStreetAddress'>Address</label><input type='text' class='editStreetAddress'readonly="readonly"/><br/>
-                               <label for='editType'>Type</label><input type='text' class='editType'readonly="readonly"/><br/>
-                               <label for='editCity'>City</label><input type='text' class='editCity'readonly="readonly"/><br/>
-                               <label for='editCountry'>Country</label><input type='text' class='editCountry'readonly="readonly"/><br/>        
+                               
+                             
+                               <input type='text' class='editCountry'readonly="readonly"/><br/>        
                        </fieldset>
                       <input type='button' value='Close' id='closeEditForm' /> 	
                </form>
