@@ -74,58 +74,16 @@
                        toggleForms('hide'); 
                        toggleCrudButtons('show');
                });
+               
+               $('#closeViewForm').click(function() { 
+                   toggleForms('hide'); 
+                   toggleCrudButtons('show');
+           });
        });
        </script>
 	
-	<style>
-  .ui-autocomplete-loading {
-    background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
-  }
- 
-  </style>
-  <script>
-  $(function() {
-    function log( message ) {
-      $( "<div>" ).text( message ).prependTo( "#log" );
-      $( "#log" ).scrollTop( 0 );
-    }
- 
-    $( "#city" ).autocomplete({
-      source: function( request, response ) {
-        $.ajax({
-          url: "http://ws.geonames.org/searchJSON",
-          dataType: "jsonp",
-          data: {
-            featureClass: "P",
-            style: "full",
-            maxRows: 12,
-            name_startsWith: request.term
-          },
-          success: function( data ) {
-            response( $.map( data.geonames, function( item ) {
-              return {
-                label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-                value: item.name
-              }
-            }));
-          }
-        });
-      },
-      minLength: 2,
-      select: function( event, ui ) {
-        log( ui.item ?
-          "Selected: " + ui.item.label :
-          "Nothing selected, input was " + this.value);
-      },
-      open: function() {
-        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-      },
-      close: function() {
-        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-      }
-    });
-  });
-  </script>
+	
+  
 </head>
 
 <body id="notsdi">
@@ -173,14 +131,13 @@
 				<legend>Create New Business</legend>
 				<label for='newBusinessName'>Name:</label><input type='text' id='newBusinessName'/><br />
 				<label for='newDescription'>Description:</label><input type='text' id='newDescription'/><br />
-				<label for='newCity'>City</label><input	type='text' id='city' size="20"/><br />
+				<label for='newCity'>City</label><input	type='text' id='newCity' size="20"/><br />
 				<label for='newCountry'>Country</label><input type='text' id='newCountry'/><br/>
 				<label for='newPhone'>Phone</label><input type='tel' id='newPhone' /><br /> 
-				<label for='newType'>Type</label>
-				<select id='newType'>
-					<option value='1'>Tailor</option>
-					<option value='2' selected='selected'>Hair Dresser</option>
-				</select>
+				<label for='newType'>Type</label><input type='text' id='newType'/><br/>
+				<label for='newStreetAddress'>Address</label><input type='text' id='newStreetAddress'/>
+				
+					
 			</fieldset>
 			<input type='button' value='Close' id='closeNewForm' /> <input
 				type='submit' value='Submit' />
@@ -191,14 +148,14 @@
                <form>
                          <fieldset>
                                <legend>Edit Record</legend>
-                               <input type='hidden' class='editBusinessname'/>
+                           
                                <label for='editBusinessName'>Name</label><input type='text' class='editBusinessName'/><br/>
                                <label for='editDesc'>Description</label><input type='text' class='editDesc'/><br/>
-                               <label for='editType'>Type</label>
-                                       <select class='editType'>
-                                               <option value='1'>Tailor</option>
-                                               <option value='2' selected='selected'>Hair Dresser</option>
-                                       </select>
+                               <label for='editType'>Type</label><input type='text' class='editType'/><br/>
+                               <label for='editPhone'>Type</label><input type='text' class='editPhone'/><br/>
+                               <label for='editCity'>Type</label><input type='text' class='editCity'/><br/>
+                               <label for='editCountry'>Type</label><input type='text' class='editCountry'/><br/>
+                               <label for='editStreetAddress'>Type</label><input type='text' class='editStreetAddress'/><br/>      
                        </fieldset>
                        <input type='button' value='Close' id='closeEditForm' />
                        <input type='submit' value='Submit'/>
@@ -216,15 +173,13 @@
                                <img style="float: right; border-radius:3px;" class='imagelink' src="" width="150" height="150"/>
                                <h3 class='editBusinessName'></h3><br/>
                                <span><b>Category: </b></span> <span class='editType'></span><br/><br/>
-                                <span class='editCity'></span> <span class='editCountry'></span><br/><br/>
+                                 <span class='editStreetAddress'></span><span class='editCity'></span> <span class='editCountry'></span><br/><br/>
                                <p class='editDesc'></p><br/>
-                              <span><b>Phone</b></span><span class='editPhone'></span><br/>
-                               <label for='editStreetAddress'>Address</label><input type='text' class='editStreetAddress'readonly="readonly"/><br/>
-                               
-                             
-                               <input type='text' class='editCountry'readonly="readonly"/><br/>        
+                              <span><b>Contact</b></span><span class='editPhone'></span><br/>
+                             <br/>
+                                                                                              
                        </fieldset>
-                      <input type='button' value='Close' id='closeEditForm' /> 	
+                      <input type='button' value='Close' id='closeViewForm' /> 	
                </form>
        </div>
 	

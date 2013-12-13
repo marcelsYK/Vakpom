@@ -32,7 +32,7 @@ public class BusinessService {
 	
 	public Business update(Business business) {
 		Business existingBusiness = businessRepository.findByBusinessName(business.getBusinessName());
-		
+		System.out.println("found you" + existingBusiness.getBusinessName() );
 		if (existingBusiness == null) {
 			return null;
 		}

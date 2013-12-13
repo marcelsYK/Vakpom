@@ -35,12 +35,12 @@ function submitNewRecord() {
 		description: $('#newDescription').val(),
 		type: $('#newType').val(),
 		phone: $('#newPhone').val(),
-		city: $('#city').val(),
+		city: $('#newCity').val(),
 		country: $('#newCountry').val(),
-		streetAddress:$('#newStreetAddress').val()
+		streetAddress: $('#newStreetAddress').val()
 		}, 
 		function(response) {
-			alert('response');
+			
 			if (response != null) {
 				loadTable();
 				toggleForms('hide'); 
@@ -72,10 +72,14 @@ function submitDeleteRecord() {
 
 function submitUpdateRecord() {
 	$.post(urlHolder.edit, {
-			businessName: $('#editBusinessname').val(),
-			type: $('#editType').val(),
-			city: $('#editCity').val(),
-			phone: $('#editPhone').val()
+		businessName: $('.editBusinessName').val(),
+		type: $('.editType').val(),
+		description: $('.editDesc').val(),
+		phone: $('.editPhone').val(),
+		streetAddress: $('.editStreetAddress').val(),
+		city: $('.editCity').val(),
+		country: $('.editCountry').val()
+		
 		}, 
 		function(response) {
 			if (response != null) {
@@ -128,14 +132,14 @@ function fillViewForm() {
 	var imageurl= imagepath + $('#tableBusinesses').data('model')[selected].imageUrl;
 	$('h3.editBusinessName').text( $('#tableBusinesses').data('model')[selected].businessName );
 	$('p.editDesc').text( $('#tableBusinesses').data('model')[selected].description );
-	$('.editStreetAddress').val( $('#tableBusinesses').data('model')[selected].streetAddress );
+	$('span.editStreetAddress').text( $('#tableBusinesses').data('model')[selected].streetAddress + ', ' );
 	$('span.editType').text( '' + $('#tableBusinesses').data('model')[selected].type );
-	$('.editPhone').val( $('#tableBusinesses').data('model')[selected].phone );
+	$('span.editPhone').text( ': ' + $('#tableBusinesses').data('model')[selected].phone );
 	$('span.editCity').text( '' + $('#tableBusinesses').data('model')[selected].city);
 	$('span.editCountry').text( $('#tableBusinesses').data('model')[selected].country);
 	$('.imagelink').attr('src', imageurl);
 	
-	alert(imageurl);
+	//alert(imageurl);
 }
 
 
